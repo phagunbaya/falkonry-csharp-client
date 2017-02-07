@@ -4,11 +4,7 @@
 /// MIT Licensed
 ///
 
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
 using falkonry_csharp_client.helper.models;
 using falkonry_csharp_client.service;
     namespace falkonry_csharp_client    
@@ -62,19 +58,19 @@ using falkonry_csharp_client.service;
         return this.falkonryService.addInputFromStream(eventbuffer, stream, options);
         }
 
-        public Stream getOutput(string pipeline, long? start, long? end)
+        public FalkonryStream getOutput(string pipeline)
         {
-        return this.falkonryService.getOutput(pipeline, start, end);
+            return this.falkonryService.getOutput(pipeline);
         }
 
         public Subscription createSubscription(string eventbuffer, Subscription subscription)
         {
-        return falkonryService.createSubscription(eventbuffer, subscription);
+            return falkonryService.createSubscription(eventbuffer, subscription);
         }
 
         public Subscription updateSubscription(string eventbuffer, Subscription subscription)
         {
-        return falkonryService.updateSubscription(eventbuffer, subscription);
+            return falkonryService.updateSubscription(eventbuffer, subscription);
         }
 
         public void deleteEventbuffer(string eventbuffer, string subscription)
@@ -84,7 +80,7 @@ using falkonry_csharp_client.service;
 
         public Publication createPublication(string pipeline, Publication publication)
         {
-        return falkonryService.createPublication(pipeline, publication);
+            return falkonryService.createPublication(pipeline, publication);
         }
 
         public Publication updatePublication(string pipeline, Publication publication)

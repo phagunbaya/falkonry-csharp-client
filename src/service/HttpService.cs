@@ -6,17 +6,13 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Net;
 using System.IO;
-using System.Web.Script.Serialization;
 using System.Net.Http;
-using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
-using System.Net.Http.Headers;
-using falkonry_csharp_client.helper.models;
+using System.Threading;
 
 namespace falkonry_csharp_client.service
 {
@@ -28,11 +24,17 @@ namespace falkonry_csharp_client.service
 
         public HttpService(string host, string token)
         {
-          
-          
-            this.host = host == null ? "https://service.falkonry.io" : host;
-            
+            System.Net.ServicePointManager.ServerCertificateValidationCallback = new System.Net.Security.RemoteCertificateValidationCallback(AcceptAllCertifications);
+            this.host = host;
             this.token = token;
+        }
+
+        private static bool AcceptAllCertifications(object sender, 
+            System.Security.Cryptography.X509Certificates.X509Certificate certification, 
+            System.Security.Cryptography.X509Certificates.X509Chain chain, 
+            System.Net.Security.SslPolicyErrors sslPolicyErrors)
+        {
+            return true;
         }
 
         public string get (string path)
@@ -316,29 +318,10 @@ namespace falkonry_csharp_client.service
             }
         }
 
-        public Stream downstream(string path)
+        public FalkonryStream downstream(string path)
         {
-            try
-            {
-                var url = this.host + path;
-                HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
-                request.ServicePoint.Expect100Continue = false;
-                request.Credentials = CredentialCache.DefaultCredentials;
-                request.Headers.Add("Authorization", "Bearer " + this.token);
-                
-                request.Method = "GET";
-                request.ContentType = "application/x-json-stream";
-               
-                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-                var resp = response.GetResponseStream();
-                
-                return resp; 
-            }
-            catch (Exception E)
-            {
-                
-                return null;
-            }
+            var falkonryStream = new FalkonryStream(this.host + path, this.token);
+            return falkonryStream;
         }
         
         public string postData(string path, string data)
@@ -392,6 +375,90 @@ namespace falkonry_csharp_client.service
 
 
 
+        }
+    }
+    public class FalkonryStream
+    {
+        private string path;
+        private string token;
+        public delegate void OutputHandler(object myObject, OutputData myArgs);
+
+        public event OutputHandler OnData;
+        private bool streaming = true;
+        private Stream stream = null;
+
+        WebClient wc { get; set; }
+
+        public FalkonryStream(string path, string token)
+        {
+            this.path = path;
+            this.token = token;
+        }
+
+        private void OnOpenReadCompleted(object sender, OpenReadCompletedEventArgs args)
+        {
+            try
+            {
+                using (var streamReader = new StreamReader(args.Result, Encoding.UTF8))
+                {
+                    string line = null;
+                    while (null != (line = streamReader.ReadLine()))
+                    {
+                        if (line.StartsWith("data:"))
+                        {
+                            var jsonPayload = line.Substring(5);
+                            OnData(this, new OutputData(jsonPayload));
+                            //Console.WriteLine(jsonPayload);
+                        }
+                    }
+                }
+            }
+            catch (Exception E)
+            {
+                Console.WriteLine(E.StackTrace);
+            }
+            wc.Dispose();
+            wc.CancelAsync();
+            InitializeWebClient();
+        }
+
+        public void Stop()
+        {
+            this.streaming = false;
+            wc.CancelAsync();
+            wc.Dispose();
+        }
+
+        public void InitializeWebClient()
+        {
+            wc = new WebClient();
+            wc.Headers.Add("Authorization", "Bearer " + this.token);
+            wc.OpenReadAsync(new Uri(this.path));
+            wc.OpenReadCompleted += OnOpenReadCompleted;
+        }
+
+        public void Start()
+        {
+            InitializeWebClient();
+            AutoResetEvent aEvent = new AutoResetEvent(false);
+            aEvent.WaitOne();
+        }
+    }
+    public class OutputData : EventArgs
+    {
+        private string data;
+
+        public OutputData(string data)
+        {
+            this.data = data;
+        }
+
+        public string Data
+        {
+            get
+            {
+                return data;
+            }
         }
     }
 }

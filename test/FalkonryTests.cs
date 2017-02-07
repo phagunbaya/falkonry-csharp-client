@@ -531,36 +531,28 @@ namespace falkonry_csharp_client.Tests
             
         }
     }
-    //[TestClass]
+    [TestClass]
     public class GetPipelineOutFlow
     {
-        Falkonry falkonry = new Falkonry("http://localhost:8080", "");
+        Falkonry falkonry = new Falkonry("https://stable.falkonry.ai", "egwfk8xmkxob4d4ad2ir6md3289s1i4v");
         [TestMethod]
         public void PipelineOutFlow()
         {
             try
             {
-                Stream streamrecieved = falkonry.getOutput("e9wxrrh4yvwv4p", null, null);
-                string folder = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-                string path = folder + "/outflow.txt";
-
-                StreamReader streamreader = new StreamReader(streamrecieved);
-                StreamWriter streamwriter = new StreamWriter(path);
-                string line;
-                using (streamwriter)
-                {
-                    while ((line = streamreader.ReadLine()) != null)
-                    {
-
-
-                        streamwriter.WriteLine(line);
-                    }
-                }
+                var stream = falkonry.getOutput("drh4urcb4gsgxd");
+                stream.OnData += new FalkonryStream.OutputHandler(onData);
+                stream.Start();
             }
             catch (System.Exception e)
             {
                 Assert.Fail();
             }
+        }
+
+        public void onData(object a, OutputData message)
+        {
+            Assert.IsNotNull(message.Data);
         }
     
 

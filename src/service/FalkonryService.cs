@@ -4,16 +4,11 @@
 /// MIT Licensed
 ///
 
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using falkonry_csharp_client.helper.models;
 using System.IO;
-using falkonry_csharp_client.service;
 using System.Web.Script.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Diagnostics;
 namespace falkonry_csharp_client.service
 {
     class FalkonryService
@@ -129,21 +124,9 @@ namespace falkonry_csharp_client.service
             
             return javascript.Deserialize<InputStatus>(status);
         }
-        public Stream getOutput(string pipeline, long? start, long? end)
+        public FalkonryStream getOutput(string pipeline)
         {
             string url = "/pipeline/"+pipeline+"/output?";
-            long? starttemp=start;
-            long? endtemp = end;
-
-            if (endtemp != null) {
-                url += "lastTime=" + end;
-                if (starttemp!= null)
-                    url += "&startTime=" + start;
-                            }
-            else {
-                if (starttemp != null)
-                    url += "startTime=" + start;
-                }
             return http.downstream(url);
         }
         public Subscription createSubscription(string eventbuffer, Subscription subscription)
