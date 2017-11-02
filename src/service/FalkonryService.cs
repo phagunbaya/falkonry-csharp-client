@@ -70,6 +70,25 @@ namespace falkonry_csharp_client.service
                 throw;
             }
         }
+
+        public bool ValidateAuthToken()
+        {
+            var url = "/";
+
+            try
+            {
+                var authResponse = _http.Get(url);
+                return true;
+            }
+            catch (Exception exception)
+            {
+                if (exception.Message == "Unauthorized : Invalid token Unauthorized" || exception.Message == "Host unreachable" || exception.Message == "Invalid URI: The hostname could not be parsed.")
+                {
+                    return false;
+                }
+                throw;
+            }
+        }
         
         // Add data to DataStream
         public InputStatus AddInputData(string datastream, string data, SortedDictionary<string, string> options)

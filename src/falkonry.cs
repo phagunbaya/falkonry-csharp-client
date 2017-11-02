@@ -51,6 +51,19 @@ namespace falkonry_csharp_client
             }
         }
 
+        public bool ValidateAuthToken()
+        {
+            try
+            {
+                return _falkonryService.ValidateAuthToken();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public void DeleteDatastream(string datastream)
         {
             try
