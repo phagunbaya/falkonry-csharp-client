@@ -578,6 +578,46 @@ namespace falkonry_csharp_client.Tests
             }
         }
 
+        // Create StandAlone Datrastream with microsecond precision
+        [TestMethod()]
+        public void CreateMicrosecondsDatastream()
+        {
+            var time = new Time();
+            time.Zone = "Asia/Kolkata";
+            time.Identifier = "time";
+
+            time.Format = "iso_8601";
+
+            var datasource = new Datasource();
+            datasource.Type = "STANDALONE";
+            var rnd = new System.Random();
+            var randomNumber = System.Convert.ToString(rnd.Next(1, 10000));
+            var ds = new DatastreamRequest();
+            ds.Name = "TestDS" + randomNumber;
+            ds.TimePrecision = "micro";
+            var Field = new Field();
+            Field.Time = time;
+
+            ds.Field = Field;
+            ds.DataSource = datasource;
+            try
+            {
+                var datastream = _falkonry.CreateDatastream(ds);
+                Assert.AreEqual(ds.Name, datastream.Name, false);
+                Assert.AreNotEqual(null, datastream.Id);
+                Assert.AreEqual(ds.Field.Time.Format, datastream.Field.Time.Format);
+                Assert.AreEqual(ds.Field.Time.Identifier, datastream.Field.Time.Identifier);
+                Assert.AreEqual(ds.DataSource.Type, datastream.DataSource.Type);
+                Assert.AreEqual(ds.TimePrecision, datastream.TimePrecision);
+                _falkonry.DeleteDatastream(datastream.Id);
+            }
+            catch (System.Exception exception)
+            {
+
+                Assert.AreEqual(exception.Message, null, false); ;
+            }
+        }
+
     }
 
     // [TestClass()]
@@ -736,7 +776,7 @@ namespace falkonry_csharp_client.Tests
             var time = new Time();
             time.Zone = "GMT";
             time.Identifier = "time";
-            time.Format = "iso_8601";
+            time.Format = "YYYY-MM-DD HH:mm:ss";
 
             var Field = new Field();
             Field.Time = time;
@@ -886,7 +926,7 @@ namespace falkonry_csharp_client.Tests
             var time = new Time();
             time.Zone = "GMT";
             time.Identifier = "time";
-            time.Format = "iso_8601";
+            time.Format = "YYYY-MM-DD HH:mm:ss";
 
             ds.Name = "TestDSPI" + randomNumber;
 
@@ -1098,7 +1138,7 @@ namespace falkonry_csharp_client.Tests
             var time = new Time();
             time.Zone = "GMT";
             time.Identifier = "time";
-            time.Format = "iso_8601";
+            time.Format = "YYYY-MM-DD HH:mm:ss";
 
             var Field = new Field();
             Field.Time = time;
@@ -1248,7 +1288,7 @@ namespace falkonry_csharp_client.Tests
             var time = new Time();
             time.Zone = "GMT";
             time.Identifier = "time";
-            time.Format = "iso_8601";
+            time.Format = "YYYY-MM-DD HH:mm:ss";
 
             ds.Name = "TestDSPI" + randomNumber;
 
@@ -1616,11 +1656,10 @@ namespace falkonry_csharp_client.Tests
         }
     }
 
-    [TestClass()]
+    // [TestClass()]
     public class GetDatastreamData
     {
-        //Falkonry _falkonry = new Falkonry("https://localhost:8080", "auth-token");
-        Falkonry _falkonry = new Falkonry("https://dev.falkonry.ai", "ffwaqz371ae52m4j2f7e3o408b2bf1cv");
+        Falkonry _falkonry = new Falkonry("https://localhost:8080", "auth-token");
 
         [TestMethod()]
         public void getData()
@@ -1631,7 +1670,7 @@ namespace falkonry_csharp_client.Tests
             var time = new Time();
             time.Zone = "GMT";
             time.Identifier = "time";
-            time.Format = "iso_8601";
+            time.Format = "YYYY-MM-DD HH:mm:ss";
 
             ds.Name = "TestDSPI" + randomNumber;
 
@@ -1658,7 +1697,7 @@ namespace falkonry_csharp_client.Tests
                 Assert.AreEqual(ds.Field.Time.Format, datastream.Field.Time.Format);
                 Assert.AreEqual(ds.Field.Time.Identifier, datastream.Field.Time.Identifier);
                 Assert.AreEqual(ds.DataSource.Type, datastream.DataSource.Type);
-                var data = "time, tag, value \n" + "2016-05-05T12:00:00Z, Unit1_current, 12.4 \n 2016-03-01 01:01:01, Unit1_vibration, 20.4";
+                var data = "time, tag, value \n" + "2016-05-05T12:00:00Z, Unit1_current, 12.4 \n 2016-03-01T01:01:01Z, Unit1_vibration, 20.4";
                 var options = new SortedDictionary<string, string>();
                 options.Add("timeIdentifier", "time");
                 options.Add("timeFormat", "iso_8601");

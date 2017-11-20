@@ -1,4 +1,4 @@
-[![Falkonry Logo](https://sandbox.falkonry.ai/img/logo.png)](http://falkonry.com/)
+[![Falkonry Logo](https://app.falkonry.ai/img/logo.png)](http://falkonry.com/)
 
 
 Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
@@ -11,6 +11,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 	* Create Datastream for narrow/historian style data from a multiple entities
 	* Create Datastream for wide style data from a single entity
 	* Create Datastream for wide style data from a multiple entities
+    * Create Datastream with microseconds precision
     * Retrieve Datastreams
     * Retrieve Datastream by id
     * Delete Datastream by id
@@ -261,6 +262,41 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 	var datastream = _falkonry.CreateDatastream(ds);
 
 ```
+
+#### Create Datastream with microseconds precision
+```
+    using falkonry_csharp_client;
+    using falkonry_csharp_client.helper.models;
+    
+    string token="Add your token here";   
+    Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+    
+    var time = new Time();
+    time.Zone = "GMT";
+    time.Identifier = "time";
+    time.Format = "iso_8601";
+
+    var datasource = new Datasource();
+    datasource.Type = "PI";
+    var ds = new DatastreamRequest();
+    var Field = new Field();
+    var Signal = new Signal();
+    Signal.ValueIdentifier = "value";
+    Signal.TagIdentifier = "tag";
+    Signal.IsSignalPrefix = true;
+    Field.Signal = Signal;
+    Field.Time = time;
+    ds.Field = Field;
+    ds.DataSource = datasource;
+    var rnd = new System.Random();
+    var randomNumber = System.Convert.ToString(rnd.Next(1, 10000));
+    ds.Name = "TestDS" + randomNumber;
+    ds.TimePrecision = "micro"; # this is use to store your data in different date time format. If input data precision is in micorseconds then set "micro" else "millis". If not sent then it will be "millis"
+    ds.Field.Time = time;
+    ds.DataSource = datasource;
+    var datastream = _falkonry.CreateDatastream(ds);
+```
+
 #### Retrieve Datastreams
 ```
     using falkonry_csharp_client;
@@ -406,7 +442,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
     
     SortedDictionary<string, string> options = new SortedDictionary<string, string>();
     options.Add("timeIdentifier", "time");
-    options.Add("timeFormat", "iso_8601");
+    options.Add("timeFormat", "YYYY-MM-DD HH:mm:ss");
     options.Add("fileFormat", "json");
 	options.Add("streaming", "false");
 	options.Add("hasMoreData", "false");
@@ -426,7 +462,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
     
     SortedDictionary<string, string> options = new SortedDictionary<string, string>();
     options.Add("timeIdentifier", "time");
-    options.Add("timeFormat", "iso_8601");
+    options.Add("timeFormat", "millis");
     options.Add("fileFormat", "csv");
 	options.Add("streaming", "false");
 	options.Add("hasMoreData", "false");
@@ -501,7 +537,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
     
     SortedDictionary<string, string> options = new SortedDictionary<string, string>();
     options.Add("timeIdentifier", "time");
-    options.Add("timeFormat", "iso_8601");
+    options.Add("timeFormat", "YYYY-MM-DD HH:mm:ss");
     options.Add("fileFormat", "json");
 	options.Add("streaming", "true");
 	options.Add("hasMoreData", "false");
@@ -521,7 +557,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
     
     SortedDictionary<string, string> options = new SortedDictionary<string, string>();
     options.Add("timeIdentifier", "time");
-    options.Add("timeFormat", "iso_8601");
+    options.Add("timeFormat", "millis");
     options.Add("fileFormat", "csv");
 	options.Add("streaming", "true");
 	options.Add("hasMoreData", "false");

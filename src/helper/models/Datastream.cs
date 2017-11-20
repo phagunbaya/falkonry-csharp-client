@@ -93,5 +93,11 @@ namespace falkonry_csharp_client.helper.models
             set;
         }
 
+        public string TimePrecision
+        {
+            get;
+            set;
+        }
+
     }
 }
