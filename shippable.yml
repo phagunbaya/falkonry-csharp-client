@@ -13,6 +13,8 @@ build:
     - echo "deb http://download.mono-project.com/repo/ubuntu stable-xenial main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
     - apt-get update
     - apt-get install mono-complete
+    - wget https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
+    - mono nuget.exe install
     - msbuild falkonry-csharp-client.sln
     - nunit-console falkonry-csharp-client/bin/Debug/falkonry-csharp-client.dll -xml=shippable/testresults/Test-results.xml
 integrations:
