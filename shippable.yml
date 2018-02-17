@@ -15,10 +15,11 @@ build:
     - apt-get install mono-complete unzip
     - wget https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
     - wget https://github.com/nunit/nunit-console/releases/download/3.8/NUnit.Console-3.8.0.zip
+    - wget https://raw.githubusercontent.com/nunit/nunit-transforms/master/nunit3-junit/nunit3-junit.xslt
     - unzip NUnit.Console-3.8.0.zip
     - mono nuget.exe install -OutputDirectory packages
     - msbuild falkonry-csharp-client.sln
-    - mono nunit3-console.exe falkonry-csharp-client/bin/Debug/falkonry-csharp-client.dll --result=shippable/testresults/Test-results.xml
+    - mono nunit3-console.exe falkonry-csharp-client/bin/Debug/falkonry-csharp-client.dll --result=shippable/testresults/Test-results.xml;transform=nunit3-junit.xslt
     - cat shippable/testresults/Test-results.xml
   on_failure:
     - cat shippable/testresults/Test-results.xml

@@ -36,14 +36,10 @@ namespace falkonry_csharp_client.Tests
     {
       var rnd = new System.Random();
       var randomNumber = System.Convert.ToString(rnd.Next(1, 10000));
-      var ds = new DatastreamRequest();
       var time = new Time();
       time.Zone = "GMT";
       time.Identifier = "time";
       time.Format = "YYYY-MM-DD HH:mm:ss";
-
-      ds.Name = "TestDSPI" + randomNumber;
-
 
       var Signal = new Signal();
       Signal.SignalIdentifier = "signal";
@@ -52,11 +48,15 @@ namespace falkonry_csharp_client.Tests
       Field.EntityIdentifier = "car";
       Field.Signal = Signal;
       Field.Time = time;
-      ds.Field = Field;
+
       var datasource = new Datasource();
       datasource.Type = "PI";
       datasource.Host = "https://test.piserver.com/piwebapi";
       datasource.ElementTemplateName = "SampleElementTempalte";
+
+      var ds = new DatastreamRequest();
+      ds.Name = "TestDSPI" + randomNumber;
+      ds.Field = Field;
       ds.DataSource = datasource;
 
       Datastream datastream = new Datastream();
@@ -78,6 +78,7 @@ namespace falkonry_csharp_client.Tests
         options.Add("timeFormat", time.Format);
         options.Add("signalIdentifier", "signal");
         options.Add("valueIdentifier", "value");
+        options.Add("entityIdentifier", "car");
         var inputstatus = _falkonry.AddInput(datastream.Id, data, options);
 
         //check data status
@@ -97,25 +98,27 @@ namespace falkonry_csharp_client.Tests
     {
       var rnd = new System.Random();
       var randomNumber = System.Convert.ToString(rnd.Next(1, 10000));
-      var ds = new DatastreamRequest();
       var time = new Time();
       time.Zone = "GMT";
       time.Identifier = "time";
       time.Format = "YYYY-MM-DD HH:mm:ss";
 
-      ds.Name = "TestDSPI" + randomNumber;
-
-      var Field = new Field();
       var Signal = new Signal();
       Signal.SignalIdentifier = "signal";
       Signal.ValueIdentifier = "value";
+
+      var Field = new Field();
       Field.Signal = Signal;
       Field.Time = time;
-      ds.Field = Field;
+
       var datasource = new Datasource();
       datasource.Type = "PI";
       datasource.Host = "https://test.piserver.com/piwebapi";
       datasource.ElementTemplateName = "SampleElementTempalte";
+
+      var ds = new DatastreamRequest();
+      ds.Name = "TestDSPI" + randomNumber;
+      ds.Field = Field;
       ds.DataSource = datasource;
 
       Datastream datastream = new Datastream();
@@ -154,8 +157,7 @@ namespace falkonry_csharp_client.Tests
     {
       var rnd = new System.Random();
       var randomNumber = System.Convert.ToString(rnd.Next(1, 10000));
-      var ds = new DatastreamRequest();
-      ds.Name = "TestDSJSON" + randomNumber;
+
       var time = new Time();
       time.Zone = "GMT";
       time.Identifier = "time";
@@ -163,11 +165,15 @@ namespace falkonry_csharp_client.Tests
 
       var Field = new Field();
       Field.Time = time;
-      ds.Field = Field;
+
       var datasource = new Datasource();
       datasource.Type = "PI";
       datasource.Host = "https://test.piserver.com/piwebapi";
       datasource.ElementTemplateName = "SampleElementTempalte";
+
+      var ds = new DatastreamRequest();
+      ds.Name = "TestDSJSON" + randomNumber;
+      ds.Field = Field;
       ds.DataSource = datasource;
 
       // Input List
@@ -232,21 +238,24 @@ namespace falkonry_csharp_client.Tests
     {
       var rnd = new System.Random();
       var randomNumber = System.Convert.ToString(rnd.Next(1, 10000));
-      var ds = new DatastreamRequest();
+
       var time = new Time();
       time.Zone = "GMT";
       time.Identifier = "time";
       time.Format = "iso_8601";
-      ds.Name = "TestDSCSV" + randomNumber;
 
       var Field = new Field();
       Field.EntityIdentifier = "Unit";
       Field.Time = time;
-      ds.Field = Field;
+
       var datasource = new Datasource();
       datasource.Type = "PI";
       datasource.Host = "https://test.piserver.com/piwebapi";
       datasource.ElementTemplateName = "SampleElementTempalte";
+
+      var ds = new DatastreamRequest();
+      ds.Name = "TestDSCSV" + randomNumber;
+      ds.Field = Field;
       ds.DataSource = datasource;
 
       // Input List
@@ -315,13 +324,11 @@ namespace falkonry_csharp_client.Tests
     {
       var rnd = new System.Random();
       var randomNumber = System.Convert.ToString(rnd.Next(1, 10000));
-      var ds = new DatastreamRequest();
+
       var time = new Time();
       time.Zone = "GMT";
       time.Identifier = "time";
       time.Format = "YYYY-MM-DD HH:mm:ss";
-
-      ds.Name = "TestDSPI" + randomNumber;
 
       var Field = new Field();
       var Signal = new Signal();
@@ -331,11 +338,15 @@ namespace falkonry_csharp_client.Tests
       Field.Time = time;
       Field.EntityIdentifier = "car";
       Field.BatchIdentifier = "batch";
-      ds.Field = Field;
+
       var datasource = new Datasource();
       datasource.Type = "PI";
       datasource.Host = "https://test.piserver.com/piwebapi";
       datasource.ElementTemplateName = "SampleElementTempalte";
+
+      var ds = new DatastreamRequest();
+      ds.Name = "TestDSPI" + randomNumber;
+      ds.Field = Field;
       ds.DataSource = datasource;
 
       Datastream datastream = new Datastream();
@@ -377,13 +388,11 @@ namespace falkonry_csharp_client.Tests
     {
       var rnd = new System.Random();
       var randomNumber = System.Convert.ToString(rnd.Next(1, 10000));
-      var ds = new DatastreamRequest();
+
       var time = new Time();
       time.Zone = "GMT";
       time.Identifier = "time";
       time.Format = "YYYY-MM-DD HH:mm:ss";
-
-      ds.Name = "TestDSPI" + randomNumber;
 
       var Field = new Field();
       var Signal = new Signal();
@@ -392,11 +401,15 @@ namespace falkonry_csharp_client.Tests
       Field.BatchIdentifier = "batch";
       Field.Signal = Signal;
       Field.Time = time;
-      ds.Field = Field;
+
       var datasource = new Datasource();
       datasource.Type = "PI";
       datasource.Host = "https://test.piserver.com/piwebapi";
       datasource.ElementTemplateName = "SampleElementTempalte";
+
+      var ds = new DatastreamRequest();
+      ds.Name = "TestDSPI" + randomNumber;
+      ds.Field = Field;
       ds.DataSource = datasource;
 
       Datastream datastream = new Datastream();
@@ -436,8 +449,7 @@ namespace falkonry_csharp_client.Tests
     {
       var rnd = new System.Random();
       var randomNumber = System.Convert.ToString(rnd.Next(1, 10000));
-      var ds = new DatastreamRequest();
-      ds.Name = "TestDSJSON" + randomNumber;
+
       var time = new Time();
       time.Zone = "GMT";
       time.Identifier = "time";
@@ -446,11 +458,15 @@ namespace falkonry_csharp_client.Tests
       var Field = new Field();
       Field.Time = time;
       Field.BatchIdentifier = "batch";
-      ds.Field = Field;
+
       var datasource = new Datasource();
       datasource.Type = "PI";
       datasource.Host = "https://test.piserver.com/piwebapi";
       datasource.ElementTemplateName = "SampleElementTempalte";
+
+      var ds = new DatastreamRequest();
+      ds.Name = "TestDSJSON" + randomNumber;
+      ds.Field = Field;
       ds.DataSource = datasource;
 
       // Input List
@@ -516,22 +532,25 @@ namespace falkonry_csharp_client.Tests
     {
       var rnd = new System.Random();
       var randomNumber = System.Convert.ToString(rnd.Next(1, 10000));
-      var ds = new DatastreamRequest();
+
       var time = new Time();
       time.Zone = "GMT";
       time.Identifier = "time";
       time.Format = "iso_8601";
-      ds.Name = "TestDSCSV" + randomNumber;
 
       var Field = new Field();
       Field.EntityIdentifier = "Unit";
       Field.BatchIdentifier = "batch";
       Field.Time = time;
-      ds.Field = Field;
+
       var datasource = new Datasource();
       datasource.Type = "PI";
       datasource.Host = "https://test.piserver.com/piwebapi";
       datasource.ElementTemplateName = "SampleElementTempalte";
+
+      var ds = new DatastreamRequest();
+      ds.Name = "TestDSCSV" + randomNumber;
+      ds.Field = Field;
       ds.DataSource = datasource;
 
       // Input List
@@ -601,22 +620,24 @@ namespace falkonry_csharp_client.Tests
     {
       var rnd = new System.Random();
       var randomNumber = System.Convert.ToString(rnd.Next(1, 10000));
-      var ds = new DatastreamRequest();
+
       var time = new Time();
-      //time.Zone = "GMT";
-      time.Identifier = " Timestamp";
+      time.Zone = "GMT";
+      time.Identifier = "timestamp";
       time.Format = "iso_8601";
-      ds.Name = "Test " + randomNumber;
 
       var Field = new Field();
-
       Field.Time = time;
-      ds.Field = Field;
       Field.EntityIdentifier = "signal";
+
       var datasource = new Datasource();
       datasource.Type = "PI";
       datasource.Host = "https://test.piserver.com/piwebapi";
       datasource.ElementTemplateName = "SampleElementTempalte";
+
+      var ds = new DatastreamRequest();
+      ds.Name = "Test " + randomNumber;
+      ds.Field = Field;
       ds.DataSource = datasource;
 
       Datastream datastream = new Datastream();
@@ -629,7 +650,7 @@ namespace falkonry_csharp_client.Tests
         Assert.AreEqual(ds.Field.Time.Format, datastream.Field.Time.Format);
         Assert.AreEqual(ds.Field.Time.Identifier, datastream.Field.Time.Identifier);
         Assert.AreEqual(ds.DataSource.Type, datastream.DataSource.Type);
-        var data = "timstamp,signal,value\n" + "2016-05-05 12:00:00,current,12.4\n2016-03-01 01:01:01,vibration,20.4";
+        var data = "timestamp,signal,value\n" + "2016-05-05 12:00:00,current,12.4\n2016-03-01 01:01:01,vibration,20.4";
         SortedDictionary<string, string> options = new SortedDictionary<string, string>();
 
 
@@ -638,7 +659,8 @@ namespace falkonry_csharp_client.Tests
         options.Add("fileFormat", "csv");
         options.Add("streaming", "false");
         options.Add("hasMoreData", "false");
-        options.Add("entityIdentifier", "signal");
+        options.Add("signalIdentifier", "signal");
+        options.Add("valueIdentifier", "value");
 
         var inputstatus = _falkonry.AddInput(datastream.Id, data, options);
         Assert.AreEqual(true, false, "No error message for missing time identifier");
@@ -657,22 +679,24 @@ namespace falkonry_csharp_client.Tests
     {
       var rnd = new System.Random();
       var randomNumber = System.Convert.ToString(rnd.Next(1, 10000));
-      var ds = new DatastreamRequest();
+
       var time = new Time();
-      //time.Zone = "GMT";
+      time.Zone = "GMT";
       time.Identifier = " Timestamp";
       time.Format = "iso_8601";
-      ds.Name = "Test " + randomNumber;
 
       var Field = new Field();
-
       Field.Time = time;
-      ds.Field = Field;
       Field.EntityIdentifier = "signal";
+
       var datasource = new Datasource();
       datasource.Type = "PI";
       datasource.Host = "https://test.piserver.com/piwebapi";
       datasource.ElementTemplateName = "SampleElementTempalte";
+
+      var ds = new DatastreamRequest();
+      ds.Name = "Test " + randomNumber;
+      ds.Field = Field;
       ds.DataSource = datasource;
 
       Datastream datastream = new Datastream();
@@ -692,7 +716,9 @@ namespace falkonry_csharp_client.Tests
         options.Add("fileFormat", "csv");
         options.Add("streaming", "false");
         options.Add("hasMoreData", "false");
-        options.Add("entityIdentifier", "signal");
+        options.Add("timeIdentifier", "time");
+        options.Add("signalIdentifier", "signal");
+        options.Add("valueIdentifier", "value");
 
         var inputstatus = _falkonry.AddInput(datastream.Id, data, options);
         Assert.AreEqual(true, false, "No error message for missing time zone");
@@ -710,22 +736,24 @@ namespace falkonry_csharp_client.Tests
     {
       var rnd = new System.Random();
       var randomNumber = System.Convert.ToString(rnd.Next(1, 10000));
-      var ds = new DatastreamRequest();
+
       var time = new Time();
-      //time.Zone = "GMT";
+      time.Zone = "GMT";
       time.Identifier = " Timestamp";
       time.Format = "iso_8601";
-      ds.Name = "Test " + randomNumber;
 
       var Field = new Field();
-
       Field.Time = time;
-      ds.Field = Field;
       Field.EntityIdentifier = "signal";
+
       var datasource = new Datasource();
       datasource.Type = "PI";
       datasource.Host = "https://test.piserver.com/piwebapi";
       datasource.ElementTemplateName = "SampleElementTempalte";
+
+      var ds = new DatastreamRequest();
+      ds.Name = "Test " + randomNumber;
+      ds.Field = Field;
       ds.DataSource = datasource;
 
       Datastream datastream = new Datastream();
@@ -762,22 +790,24 @@ namespace falkonry_csharp_client.Tests
     {
       var rnd = new System.Random();
       var randomNumber = System.Convert.ToString(rnd.Next(1, 10000));
-      var ds = new DatastreamRequest();
+
       var time = new Time();
-      //time.Zone = "GMT";
+      time.Zone = "GMT";
       time.Identifier = " Timestamp";
       time.Format = "iso_8601";
-      ds.Name = "Test " + randomNumber;
 
       var Field = new Field();
-
       Field.Time = time;
-      ds.Field = Field;
-      Field.EntityIdentifier = "signal";
+      Field.EntityIdentifier = "entity";
+
       var datasource = new Datasource();
       datasource.Type = "PI";
       datasource.Host = "https://test.piserver.com/piwebapi";
       datasource.ElementTemplateName = "SampleElementTempalte";
+
+      var ds = new DatastreamRequest();
+      ds.Name = "Test " + randomNumber;
+      ds.Field = Field;
       ds.DataSource = datasource;
 
       Datastream datastream = new Datastream();
