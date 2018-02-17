@@ -12,13 +12,13 @@ build:
     - apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
     - echo "deb http://download.mono-project.com/repo/ubuntu stable-xenial main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
     - apt-get update
-    - apt-get install mono-complete nunit-console unzip
+    - apt-get install mono-complete unzip
     - wget https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
     - wget https://github.com/nunit/nunit-console/releases/download/3.8/NUnit.Console-3.8.0.zip
     - unzip NUnit.Console-3.8.0.zip
     - mono nuget.exe install -OutputDirectory packages
     - msbuild falkonry-csharp-client.sln
-    - mono NUnit.Console-3.8.0/nunit3-console.exe falkonry-csharp-client/bin/Debug/falkonry-csharp-client.dll -xml=shippable/testresults/Test-results.xml
+    - mono nunit3-console.exe falkonry-csharp-client/bin/Debug/falkonry-csharp-client.dll -xml=shippable/testresults/Test-results.xml
 integrations:
   notifications:
     - integrationName: slack-notify
