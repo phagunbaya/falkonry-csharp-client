@@ -14,7 +14,7 @@ build:
     - apt-get update
     - apt-get install mono-complete
     - wget https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
-    - mono nuget.exe install
+    - mono nuget.exe install -OutputDirectory packages
     - msbuild falkonry-csharp-client.sln
     - nunit-console falkonry-csharp-client/bin/Debug/falkonry-csharp-client.dll -xml=shippable/testresults/Test-results.xml
 integrations:
