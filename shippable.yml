@@ -19,6 +19,9 @@ build:
     - mono nuget.exe install -OutputDirectory packages
     - msbuild falkonry-csharp-client.sln
     - mono nunit3-console.exe falkonry-csharp-client/bin/Debug/falkonry-csharp-client.dll --result=shippable/testresults/Test-results.xml
+    - cat shippable/testresults/Test-results.xml
+  on_failure:
+    - cat shippable/testresults/Test-results.xml
 # integrations:
 #   notifications:
 #     - integrationName: slack-notify
