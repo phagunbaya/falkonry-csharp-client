@@ -20,8 +20,12 @@ build:
     - mono nuget.exe install -OutputDirectory packages
     - msbuild falkonry-csharp-client.sln
     - mono nunit3-console.exe falkonry-csharp-client/bin/Debug/falkonry-csharp-client.dll --result=shippable/testresults/Test-results.xml;transform=nunit3-junit.xslt
+    - ls -l
+    - ls -l shippable/testresults
     - cat shippable/testresults/Test-results.xml
   on_failure:
+    - ls -l
+    - ls -l shippable/testresults
     - cat shippable/testresults/Test-results.xml
 # integrations:
 #   notifications:
