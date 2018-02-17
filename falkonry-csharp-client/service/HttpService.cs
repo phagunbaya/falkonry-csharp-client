@@ -9,7 +9,6 @@ using System.Security.Cryptography.X509Certificates;
 using System.Net.Security;
 using System.Collections.Specialized;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 
 namespace falkonry_csharp_client.service
 {
@@ -19,17 +18,7 @@ namespace falkonry_csharp_client.service
         private readonly string _token;
         private readonly string _defaultHeder;
 
-        public bool RemoteCertificateValidationCallback(
-
-                  object sender,
-
-                  X509Certificate certificate,
-
-                  X509Chain chain,
-
-                  SslPolicyErrors sslPolicyErrors
-
-           )
+        public bool RemoteCertificateValidationCallback(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
         { return true; }
 
 
@@ -37,7 +26,7 @@ namespace falkonry_csharp_client.service
         {
 
 
-            _host = host ?? "https://service.falkonry.io";
+            _host = host ?? "https://localhost:8080";
 
             _token = token;
 

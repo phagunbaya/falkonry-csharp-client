@@ -1,9 +1,7 @@
 ﻿using NUnit.Framework;
-using falkonry_csharp_client;
 using falkonry_csharp_client.helper.models;
 using System.Collections.Generic;
 using System.IO;
-using System.Diagnostics;
 
 namespace falkonry_csharp_client.Tests
 {
@@ -980,7 +978,7 @@ namespace falkonry_csharp_client.Tests
                 Assert.AreEqual(ds.DataSource.Type, datastream.DataSource.Type);
                 var folder = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
 
-                var path = folder + "/addData.json";
+                var path = folder + "/resources/addData.json";
 
                 var bytes = File.ReadAllBytes(path);
 

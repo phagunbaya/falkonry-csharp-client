@@ -101,7 +101,7 @@
     <Compile Include="helper\models\Timezone.cs" />
     <Compile Include="helper\models\Tracker.cs" />
     <Compile Include="helper\models\ValueType.cs" />
-    <Compile Include="helper\models\field.cs" />
+    <Compile Include="helper\models\Field.cs" />
     <Compile Include="service\FalkonryException.cs" />
     <Compile Include="service\FalkonryService.cs" />
     <Compile Include="service\HttpService.cs" />
@@ -118,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tests\" />
+    <Folder Include="resources\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
