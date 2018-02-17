@@ -18,7 +18,7 @@ build:
     - unzip NUnit.Console-3.8.0.zip
     - mono nuget.exe install -OutputDirectory packages
     - msbuild falkonry-csharp-client.sln
-    - mono nunit3-console.exe falkonry-csharp-client/bin/Debug/falkonry-csharp-client.dll -xml=shippable/testresults/Test-results.xml
+    - mono nunit3-console.exe falkonry-csharp-client/bin/Debug/falkonry-csharp-client.dll --result=shippable/testresults/Test-results.xml
 # integrations:
 #   notifications:
 #     - integrationName: slack-notify
