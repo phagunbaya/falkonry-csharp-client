@@ -2,32 +2,27 @@
 
 namespace falkonry_csharp_client.helper.models
 {
-    public class AssessmentRequest
+  public class AssessmentRequest
+  {
+
+    public string Name
     {
-       
-        public string Name
-        {
-            get;
-            set;
-        }
-       
-       
-        public string ToJson()
-        {
-            return new JavaScriptSerializer().Serialize(this);
-        }
-        public string Datastream
-        {
-            get;
-            set;
-        }
-        public string Rate
-        {
-            get;
-            set;
-        }
-
-
-
+      get;
+      set;
     }
+    public string ToJson()
+    {
+      return new JavaScriptSerializer().Serialize(this);
+    }
+    public string Datastream
+    {
+      get;
+      set;
+    }
+    public string Rate
+    {
+      get;
+      set;
+    }
+  }
 }

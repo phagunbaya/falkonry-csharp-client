@@ -1,12 +1,11 @@
 namespace falkonry_csharp_client.helper.models
 {
-    public class EventType
+  public class EventType
+  {
+    public string Type
     {
-        public string Type
-        {
-            get;
-            set;
-
-        }
+      get;
+      set;
     }
+  }
 }

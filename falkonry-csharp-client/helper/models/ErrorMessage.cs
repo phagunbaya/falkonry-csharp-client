@@ -1,12 +1,12 @@
 ﻿namespace falkonry_csharp_client.helper.models
 {
-    public class ErrorMessage
+  public class ErrorMessage
+  {
+    public string Message
     {
-        public string Message
-        {
-            get;
-            set;
-        }
-       
+      get;
+      set;
     }
+
+  }
 }

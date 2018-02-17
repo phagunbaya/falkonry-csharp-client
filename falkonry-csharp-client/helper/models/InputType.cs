@@ -1,17 +1,17 @@
 namespace falkonry_csharp_client.helper.models
 {
-    public class InputType
+  public class InputType
+  {
+    public string Type
     {
-        public string Type
-        {
-            get;
-            set;
-        }
-
-        public string InputConf
-        {
-            get;
-            set;
-        }
+      get;
+      set;
     }
+
+    public string InputConf
+    {
+      get;
+      set;
+    }
+  }
 }

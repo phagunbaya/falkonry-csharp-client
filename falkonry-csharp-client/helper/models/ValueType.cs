@@ -1,11 +1,11 @@
 namespace falkonry_csharp_client.helper.models
 {
-    public class ValueType
+  public class ValueType
+  {
+    public string Type
     {
-        public string Type
-        {
-            get;
-            set;
-        }
+      get;
+      set;
     }
+  }
 }

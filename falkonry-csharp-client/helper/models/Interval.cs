@@ -1,19 +1,16 @@
 namespace falkonry_csharp_client.helper.models
 {
-
-    public class Interval
+  public class Interval
+  {
+    public string Field
     {
-        public string Field
-        {
-            get;
-            set;
-
-        }
-        public string Duration
-        {
-            get;
-            set;
-
-        }
+      get;
+      set;
     }
+    public string Duration
+    {
+      get;
+      set;
+    }
+  }
 }
