@@ -1030,19 +1030,6 @@ Sample CSVFile
 
   string assessment_id ="assessment ID here";
 
-  internal class FalkonryEvent
-  {
-    public string entity { get; set; }
-    public string time { get; set; }
-    public string value { get; set; }
-    public string batch { get; set; }
-    
-    public override string ToString()
-    {
-      return $"{{time: '{time}', entity: '{entity}', value: '{value}', batch: '{batch}'}}";
-    }
-  }
-
   //On successfull live streaming output EventSource_Message will be triggered
   private void EventSource_Message(object sender, EventSource.ServerSentEventArgs e)
   {
