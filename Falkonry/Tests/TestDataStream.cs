@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using Falkonry.helper.models;
+using Falkonry.Helper.Models;
 using System.Collections.Generic;
 
 namespace Falkonry.Tests

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Falkonry.helper.models;
+using Falkonry.Helper.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace Falkonry.service
+namespace Falkonry.Service
 {
   internal class FalkonryService
   {

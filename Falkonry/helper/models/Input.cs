@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Falkonry.helper.models
+namespace Falkonry.Helper.Models
 {
   public class Input
   {

@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{23865509-62E4-40DF-95B9-DDFD7EAC6AD7}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>falkonry</RootNamespace>
+    <RootNamespace>Falkonry</RootNamespace>
     <AssemblyName>falkonryclient</AssemblyName>
     <PackageId>Falkonry</PackageId>
     <PackageVersion>1.1.1</PackageVersion>
@@ -93,33 +93,33 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="falkonry.cs" />
-    <Compile Include="helper\models\Assessment.cs" />
-    <Compile Include="helper\models\AssessmentRequest.cs" />
-    <Compile Include="helper\models\DataTransformation.cs" />
-    <Compile Include="helper\models\Datasource.cs" />
-    <Compile Include="helper\models\Datastream.cs" />
-    <Compile Include="helper\models\DatastreamRequest.cs" />
-    <Compile Include="helper\models\EntityMeta.cs" />
-    <Compile Include="helper\models\EntityMetaRequest.cs" />
-    <Compile Include="helper\models\ErrorMessage.cs" />
-    <Compile Include="helper\models\EventSource.cs" />
-    <Compile Include="helper\models\EventType.cs" />
-    <Compile Include="helper\models\HttpResponse.cs" />
-    <Compile Include="helper\models\Input.cs" />
-    <Compile Include="helper\models\InputStatus.cs" />
-    <Compile Include="helper\models\InputType.cs" />
-    <Compile Include="helper\models\Interval.cs" />
-    <Compile Include="helper\models\Signal.cs" />
-    <Compile Include="helper\models\Stats.cs" />
-    <Compile Include="helper\models\Time.cs" />
-    <Compile Include="helper\models\Timezone.cs" />
-    <Compile Include="helper\models\Tracker.cs" />
-    <Compile Include="helper\models\ValueType.cs" />
-    <Compile Include="helper\models\Field.cs" />
-    <Compile Include="service\FalkonryException.cs" />
-    <Compile Include="service\FalkonryService.cs" />
-    <Compile Include="service\HttpService.cs" />
+    <Compile Include="Falkonry.cs" />
+    <Compile Include="Helper\Models\Assessment.cs" />
+    <Compile Include="Helper\Models\AssessmentRequest.cs" />
+    <Compile Include="Helper\Models\DataTransformation.cs" />
+    <Compile Include="Helper\Models\Datasource.cs" />
+    <Compile Include="Helper\Models\Datastream.cs" />
+    <Compile Include="Helper\Models\DatastreamRequest.cs" />
+    <Compile Include="Helper\Models\EntityMeta.cs" />
+    <Compile Include="Helper\Models\EntityMetaRequest.cs" />
+    <Compile Include="Helper\Models\ErrorMessage.cs" />
+    <Compile Include="Helper\Models\EventSource.cs" />
+    <Compile Include="Helper\Models\EventType.cs" />
+    <Compile Include="Helper\Models\HttpResponse.cs" />
+    <Compile Include="Helper\Models\Input.cs" />
+    <Compile Include="Helper\Models\InputStatus.cs" />
+    <Compile Include="Helper\Models\InputType.cs" />
+    <Compile Include="Helper\Models\Interval.cs" />
+    <Compile Include="Helper\Models\Signal.cs" />
+    <Compile Include="Helper\Models\Stats.cs" />
+    <Compile Include="Helper\Models\Time.cs" />
+    <Compile Include="Helper\Models\Timezone.cs" />
+    <Compile Include="Helper\Models\Tracker.cs" />
+    <Compile Include="Helper\Models\ValueType.cs" />
+    <Compile Include="Helper\Models\Field.cs" />
+    <Compile Include="Service\FalkonryException.cs" />
+    <Compile Include="Service\FalkonryService.cs" />
+    <Compile Include="Service\HttpService.cs" />
     <Compile Include="Tests\TestDataStream.cs" />
     <Compile Include="Tests\TestEntityMeta.cs" />
     <Compile Include="Tests\TestAssessment.cs" />
@@ -131,7 +131,7 @@
     <Compile Include="Tests\TestGetOutput.cs">
       <IncludeInPackage>false</IncludeInPackage>
     </Compile>
-    <Compile Include="helper\models\FalkonryEvent.cs" />
+    <Compile Include="Helper\Models\FalkonryEvent.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tests\" />

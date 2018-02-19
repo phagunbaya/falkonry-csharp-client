@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using Falkonry.helper.models;
-using Falkonry.service;
+using Falkonry.Helper.Models;
+using Falkonry.Service;
 using System;
 
 namespace Falkonry

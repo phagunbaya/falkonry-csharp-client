@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Falkonry.helper.models
+namespace Falkonry.Helper.Models
 {
   public class InputStatus
   {

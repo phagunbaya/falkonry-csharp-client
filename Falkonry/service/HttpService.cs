@@ -4,13 +4,13 @@ using System.Net;
 using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Falkonry.helper.models;
+using Falkonry.Helper.Models;
 using System.Security.Cryptography.X509Certificates;
 using System.Net.Security;
 using System.Collections.Specialized;
 using Newtonsoft.Json;
 
-namespace Falkonry.service
+namespace Falkonry.Service
 {
   public class HttpService
   {

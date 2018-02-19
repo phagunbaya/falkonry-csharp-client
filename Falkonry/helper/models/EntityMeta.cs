@@ -1,5 +1,5 @@
 using System.Web.Script.Serialization;
-namespace Falkonry.helper.models
+namespace Falkonry.Helper.Models
 {
   public class EntityMeta
   {

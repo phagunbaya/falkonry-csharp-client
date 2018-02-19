@@ -9,7 +9,7 @@ using System.Net.Mime;
 using System.Text;
 using System.Threading;
 
-namespace Falkonry.helper.models
+namespace Falkonry.Helper.Models
 {
   public class EventSource : IDisposable
   {

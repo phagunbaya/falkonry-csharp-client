@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace Falkonry.service
+namespace Falkonry.Service
 {
   [Serializable()]
   public class FalkonryException : ApplicationException

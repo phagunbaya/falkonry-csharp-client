@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.Script.Serialization;
 
-namespace Falkonry.helper.models
+namespace Falkonry.Helper.Models
 {
   public class DatastreamRequest
   {
