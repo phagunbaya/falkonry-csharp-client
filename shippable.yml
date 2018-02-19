@@ -17,10 +17,10 @@ build:
     - wget https://github.com/nunit/nunit-console/releases/download/3.8/NUnit.Console-3.8.0.zip
     - wget https://raw.githubusercontent.com/nunit/nunit-transforms/master/nunit3-junit/nunit3-junit.xslt
     - unzip NUnit.Console-3.8.0.zip
-    - mono nuget.exe install falkonry-client/packages.config -OutputDirectory packages
+    - mono nuget.exe install Falkonry/packages.config -OutputDirectory packages
     - ls -l
     - msbuild falkonry-csharp-client.sln
-    - mono nunit3-console.exe falkonry-csharp-client/bin/Debug/falkonry-csharp-client.dll --result=shippable/testresults/Test-results.xml;transform=nunit3-junit.xslt
+    - mono nunit3-console.exe Falkonry/bin/Debug/falkonryclient.dll --result=shippable/testresults/Test-results.xml;transform=nunit3-junit.xslt
     - cat shippable/testresults/Test-results.xml
   on_failure:
     - cat shippable/testresults/Test-results.xml
