@@ -1,7 +1,8 @@
+.idea
 .DS_Store
 obj
 .vs
-bin/Debug/*.dll.config
-bin/Debug/*.dll
-bin/Debug/*.pdb
-src/bin
+bin
+packages
+*.userprefs
+*.user
