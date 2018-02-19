@@ -129,9 +129,7 @@
     <Compile Include="Tests\TestAddFacts.cs" />
     <Compile Include="Tests\TestGetFacts.cs" />
     <Compile Include="Tests\TestGetDatastreamData.cs" />
-    <Compile Include="Tests\TestGetOutput.cs">
-      <IncludeInPackage>false</IncludeInPackage>
-    </Compile>
+    <Compile Include="Tests\TestGetOutput.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tests\" />
