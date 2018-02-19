@@ -1,9 +1,9 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "falkonry-csharp-client", "falkonry-csharp-client\falkonry-csharp-client.csproj", "{23865509-62E4-40DF-95B9-DDFD7EAC6AD7}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AEF3A38E-FB52-44BC-AB0E-CA25B9E6965E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "falkonry-client", "falkonry-client\falkonry-client.csproj", "{23865509-62E4-40DF-95B9-DDFD7EAC6AD7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,5 +29,7 @@ Global
 		$0.CSharpFormattingPolicy = $3
 		$3.scope = text/x-csharp
 		$0.StandardHeader = $4
+		$0.VersionControlPolicy = $5
+		version = 1.1.1
 	EndGlobalSection
 EndGlobal
