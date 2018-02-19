@@ -19,6 +19,9 @@
     <Authors>Falkonry Inc</Authors>
     <ReleaseVersion>1.1.1</ReleaseVersion>
     <PackageTags>falkonry</PackageTags>
+    <DevelopmentDependency>true</DevelopmentDependency>
+    <PackageReleaseNotes>https://github.com/Falkonry/falkonry-csharp-client/releases</PackageReleaseNotes>
+    <Summary>Falkonry C# ADK</Summary>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
