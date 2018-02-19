@@ -20,7 +20,7 @@ build:
     - mono nuget.exe install Falkonry/packages.config -OutputDirectory packages
     - ls -l
     - msbuild falkonry-csharp-client.sln
-    - mono nunit3-console.exe Falkonry/bin/Debug/falkonryclient.dll --result=shippable/testresults/Test-results.xml;transform=nunit3-junit.xslt
+    - mono nunit3-console.exe Falkonry/bin/Debug/Falkonry.dll --result=shippable/testresults/Test-results.xml;transform=nunit3-junit.xslt
     - cat shippable/testresults/Test-results.xml
   on_failure:
     - cat shippable/testresults/Test-results.xml
