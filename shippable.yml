@@ -24,13 +24,13 @@ build:
     - cat shippable/testresults/Test-results.xml
   on_failure:
     - cat shippable/testresults/Test-results.xml
-# integrations:
-#   notifications:
-#     - integrationName: slack-notify
-#       type: slack
-#       recipients:
-#         - "#builds"
-#       on_success: always
-#       on_failure: always
-#       on_start: always
-#       on_pull_request: always
+integrations:
+  notifications:
+    - integrationName: slack-notify
+      type: slack
+      recipients:
+        - "#builds"
+      on_success: always
+      on_failure: always
+      on_start: always
+      on_pull_request: always
