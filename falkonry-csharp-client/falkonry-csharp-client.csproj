@@ -122,6 +122,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\addData.json" />
+    <None Include="resources\addData.csv" />
+    <None Include="resources\factData.json" />
+    <None Include="resources\factsDataWithTags.json" />
+    <None Include="resources\factData.csv" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />

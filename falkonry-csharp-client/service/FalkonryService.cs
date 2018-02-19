@@ -201,7 +201,7 @@ namespace falkonry_csharp_client.service
     {
       try
       {
-        var url = "/assessment/" + assessment + "/facts";
+        var url = "/assessment/" + assessment + "/facts?";
         string modelIndex;
         string startTime;
         string endTime;
@@ -287,12 +287,13 @@ namespace falkonry_csharp_client.service
     }
 
     // Add facts as stream
-    public string AddFactsStream(string assessment, byte[] stream, SortedDictionary<string, string> options)
+    public InputStatus AddFactsStream(string assessment, byte[] stream, SortedDictionary<string, string> options)
     {
       try
       {
         var url = get_add_facts_url(assessment, options);
-        return _http.Upstream(url, stream);
+        var status = _http.Upstream(url, stream);
+        return JsonConvert.DeserializeObject<InputStatus>(status);
       }
       catch (Exception)
       {
@@ -380,16 +381,16 @@ namespace falkonry_csharp_client.service
 
         }
         string format;
-        var responseFromat = "application/json";
-        if (options.TryGetValue("responseFromat", out format))
+        var responseFormat = "application/json";
+        if (options.TryGetValue("responseFormat", out format))
         {
           if (format.Equals("text/csv"))
           {
-            responseFromat = "text/csv";
+            responseFormat = "text/csv";
           }
         }
 
-        var outputData = _http.GetOutput(url, responseFromat);
+        var outputData = _http.GetOutput(url, responseFormat);
         return outputData;
       }
       catch (Exception)

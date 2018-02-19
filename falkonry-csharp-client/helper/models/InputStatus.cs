@@ -1,4 +1,6 @@
-﻿namespace falkonry_csharp_client.helper.models
+﻿using Newtonsoft.Json;
+
+namespace falkonry_csharp_client.helper.models
 {
   public class InputStatus
   {
@@ -7,16 +9,7 @@
       get;
       set;
     }
-    public int RequestPending
-    {
-      get;
-      set;
-    }
-    public int RequestCompleted
-    {
-      get;
-      set;
-    }
+    [JsonProperty("__$id")]
     public string Id
     {
       get;
@@ -28,11 +21,6 @@
       set;
     }
     public long CreateTime
-    {
-      get;
-      set;
-    }
-    public string EventBuffer
     {
       get;
       set;
