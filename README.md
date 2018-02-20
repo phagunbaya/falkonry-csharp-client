@@ -62,7 +62,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   using Falkonry.Helper.Models;
     
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
     
   var time = new Time();
   time.Zone = "GMT";
@@ -96,7 +96,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   using Falkonry.Helper.Models;
     
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
     
   var time = new Time();
   time.Zone = "GMT";
@@ -128,7 +128,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   using Falkonry.Helper.Models;
   
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
     
   var time = new Time();
   time.Zone = "GMT";
@@ -162,7 +162,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   using Falkonry.Helper.Models;
   
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
     
   var time = new Time();
   time.Zone = "GMT";
@@ -176,7 +176,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   var Signal = new Signal();
   
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
     
   var time = new Time();
   time.Zone = "GMT";
@@ -234,7 +234,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   using Falkonry.Helper.Models;
   
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
     
   var time = new Time();
   time.Zone = "GMT";
@@ -250,7 +250,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   using Falkonry.Helper.Models;
   
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
     
   var time = new Time();
   time.Zone = "GMT";
@@ -309,7 +309,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   using Falkonry.Helper.Models;
   
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
   
   var time = new Time();
   time.Zone = "GMT";
@@ -343,7 +343,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   using Falkonry.Helper.Models;
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
   List<Datastream> datastreams = _falkonry.GetDatastreams();
 ```
 
@@ -353,7 +353,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   using Falkonry.Helper.Models;
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
   Datastream datastream = _falkonry.GetDatastream('datastreamId')
 
 ```
@@ -364,7 +364,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   using Falkonry.Helper.Models;
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
   _falkonry.DeleteDatastream('datastreamId')
 
 ```
@@ -375,7 +375,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   using Falkonry.Helper.Models;
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
   
   // Create Datastream
   datastream = falkonry.getDatastream(datastream.id);
@@ -405,7 +405,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   using Falkonry.Helper.Models;
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
   // Get entitymeta
   entityMetaResponseList = falkonry.getEntityMeta('datastream-id');
 ```
@@ -416,7 +416,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   using Falkonry.Helper.Models;
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
 
   AssessmentRequest asmt = new AssessmentRequest();
   asmt.name = "assessment name here";
@@ -431,7 +431,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   using Falkonry.Helper.Models;
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
   List<Assessment> assessmentList = falkonry.getAssessments();
 ```
 
@@ -442,7 +442,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   using Falkonry.Helper.Models;
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
   Assessment assessment = falkonry.getAssessment('assessment-id');
 ```
 
@@ -453,7 +453,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
     using Falkonry.Helper.Models;
 
     string token="Add your token here";   
-    Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+    Falkonry falkonry = new Falkonry("https://localhost:8080", token);
     falkonry.DeleteAssessment('assessment-id');
 ```
 
@@ -471,7 +471,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   options.Add("valueIdentifier", "Health");
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
   Assessment assessment = falkonry.getAssessment('assessment-id');
   String data = "{\"time\" : \"2011-03-26T12:00:00Z\", \"entities\" : \"entity1\", \"end\" : \"2012-06-01T00:00:00Z\", \"Health\" : \"Normal\"}";
   string response = falkonry.addFacts('assessment-id',data, options);
@@ -487,7 +487,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   using Falkonry.Helper.Models;
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
 
   var data = "{\"time\" :\"2016-03-01 01:01:01\", \"signal\":\"current\",\"value\" : 12.4,\"car\" : \"car1\"}";
   var options = new SortedDictionary<string, string>();
@@ -507,7 +507,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   using Falkonry.Helper.Models;
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
 
   var data = "time,signal,value\n" + "2016-05-05 12:00:00,current,12.4\n2016-03-01 01:01:01,vibration,20.4";
   var options = new SortedDictionary<string, string>();
@@ -525,7 +525,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   using Falkonry.Helper.Models;
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
 
   var data = "{\"time\" :\"2016-03-01 01:01:01\", \"current\" : 12.4, \"vibration\" : 3.4, \"state\" : \"On\"}";
   var options = new SortedDictionary<string, string>();
@@ -540,7 +540,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   using Falkonry.Helper.Models;
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
 
   var data = "time,Unit,current,vibration,state\n 2016-05-05T12:00:00.000Z,Unit1,12.4,3.4,On";
   var options = new SortedDictionary<string, string>();
@@ -561,7 +561,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   using Falkonry.Helper.Models;
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
 
   var data = "{\"time\" :\"2016-03-01 01:01:01\", \"signal\":\"current\",\"value\" : 12.4,\"batch\" : \"batch1\"}";
   var options = new SortedDictionary<string, string>();
@@ -582,7 +582,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   using Falkonry.Helper.Models;
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
 
   var data = "time,signal,value,Unit,Batch\n" + "2016-05-05 12:00:00,current,12.4,uni1,batch1\n2016-03-01 01:01:01,vibration,20.4,unit2,batch2";
   var options = new SortedDictionary<string, string>();
@@ -607,7 +607,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   using Falkonry.Helper.Models;
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
 
   var data = "{\"time\" :\"2016-03-01 01:01:01\", \"current\" : 12.4, \"vibration\" : 3.4, \"state\" : \"On\", \"car\" : \"car1\", \"batch\" : \"batch1\"}";
   var options = new SortedDictionary<string, string>();
@@ -627,7 +627,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   using Falkonry.Helper.Models;
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
 
   var data = "time,Batch,current,vibration,state\n 2016-05-05T12:00:00.000Z,batch1,12.4,3.4,On";
   var options = new SortedDictionary<string, string>();
@@ -647,7 +647,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   using Falkonry.Helper.Models;
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
 
   /*This particular example will read data from a AddData.json file in debug folder in bin*/
   
@@ -675,7 +675,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   using Falkonry.Helper.Models;
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
 
   /*This particular example will read data from a AddData.json file in debug folder in bin*/
   
@@ -702,7 +702,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   using Falkonry.Helper.Models;
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
 
   string data = "{\"time\" :\"2016-03-01 01:01:01\", \"current\" : 12.4, \"vibration\" : 3.4, \"state\" : \"On\"}";
   
@@ -721,7 +721,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   using Falkonry.Helper.Models;
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
 
   string data = "time, entities, signal1, signal2, signal3, signal4" + "\n"
         + "1467729675422, entity1, 41.11, 62.34, 77.63, 4.8" + "\n"
@@ -742,7 +742,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   using Falkonry.Helper.Models;
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
 
   /*This particular example will read data from a AddData.json file in debug folder in bin*/
   
@@ -769,7 +769,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   using Falkonry.Helper.Models;
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
 
   /*This particular example will read data from a AddData.json file in debug folder in bin*/
   
@@ -804,7 +804,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 
   string token = "Add your token here";   
   SortedDictionary<string, string> options = new SortedDictionary<string, string>();
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
   String data = "{\"time\" : \"2011-03-26T12:00:00Z\", \"end\" : \"2012-06-01T00:00:00Z\", \"Health\" : \"Normal\"}";
   string response = falkonry.addFacts('assessment-id',data, options);
 
@@ -819,7 +819,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 
   string token = "Add your token here";   
   SortedDictionary<string, string> options = new SortedDictionary<string, string>();
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
   String data = "{\"Health\" : \"Normal\", \"Batch\" : \"batch1\"}";
   options.Add("valueIdentifier", "Health");
   options.Add("batchIdentifier", "Batch");
@@ -842,7 +842,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 
   string token = "Add your token here";   
   SortedDictionary<string, string> options = new SortedDictionary<string, string>();
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
   String data = "{\"time\" : \"2011-03-26T12:00:00Z\", \"entities\" : \"entity1\", \"end\" : \"2012-06-01T00:00:00Z\", \"Health\" : \"Normal\"}";
   string response = falkonry.addFacts('assessment-id',data, options);
 
@@ -862,7 +862,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 
   string token = "Add your token here";   
   SortedDictionary<string, string> options = new SortedDictionary<string, string>();
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
   string data = "time,end,Health\n2011-03-31T00:00:00Z,2011-04-01T00:00:00Z,Normal\n2011-03-31T00:00:00Z,2011-04-01T00:00:00Z,Normal";
   string response = falkonry.addFacts('assessment-id',data, options);
 
@@ -884,7 +884,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 
   string token = "Add your token here";   
   SortedDictionary<string, string> options = new SortedDictionary<string, string>();
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
   string data = "time,end,car,Health,Tag\n2011-03-31T00:00:00Z,2011-04-01T00:00:00Z,IL9753,Normal\n2011-03-31T00:00:00Z,2011-04-01T00:00:00Z,HI3821,Normal,testTag1";
   string response = falkonry.addFacts('assessment-id',data, options);
 
@@ -911,7 +911,7 @@ Sample JSONFile:
   options.Add("valueIdentifier", "Health");
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
   string path = "Insert the path to your file here";
   byte[] bytes = System.IO.File.ReadAllBytes(path);
   string response = falkonry.AddFactsStream('assessment-id',bytes, options);
@@ -941,7 +941,7 @@ Sample CSVFile
   options.Add("valueIdentifier", "Health");
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
   string path = "Insert the path to your file here";
   byte[] bytes = System.IO.File.ReadAllBytes(path);
   string response = falkonry.AddFactsStream('assessment-id',bytes, options);
@@ -953,7 +953,7 @@ Sample CSVFile
   using Falkonry.Helper.Models;
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
   string assessment = "id of the assessment here";
   string response = falkonry.getFacts('assessment',options);
 
@@ -965,7 +965,7 @@ Sample CSVFile
   using Falkonry.Helper.Models;
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
   string datastream = "id of the datastream here";
   string response = falkonry.GetDatastreamData('datastream',options);
 ```
@@ -976,7 +976,7 @@ Sample CSVFile
   using Falkonry.Helper.Models;
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
   
   // Create Datastream
 
@@ -1026,7 +1026,7 @@ Sample CSVFile
   using Falkonry.Helper.Models;
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
 
   string assessment_id ="assessment ID here";
 
@@ -1057,7 +1057,7 @@ Sample CSVFile
   using Falkonry.Helper.Models;
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
   string datastream_id = "Your datastream id";
   falkonry.onDatastream(datastream_id);
 ```
@@ -1068,7 +1068,7 @@ Sample CSVFile
   using Falkonry.Helper.Models;
 
   string token="Add your token here";   
-  Falkonry falkonry = new Falkonry("http://localhost:8080", token);
+  Falkonry falkonry = new Falkonry("https://localhost:8080", token);
   string datastream_id = "Your datastream id";
   falkonry.offDatastream(datastream_id);
 ```
