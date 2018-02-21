@@ -37,9 +37,9 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   * Add live input data (csv format) from a stream to Datastream (Used for live monitoring) 
   * Add facts data (json format) to Assessment of single entity datastream
   * Add facts data (json format) to Assessment of single entity Batch datastream
-  * Add facts data (json format) with addition tag to Assessment of multi entity datastream
+  * Add facts data (json format) with additional keyword to Assessment of multi entity datastream
   * Add facts data (csv format) to Assessment of single entity datastream
-  * Add facts data (csv format) with tags Assessment of single entity datastream
+  * Add facts data (csv format) with keywords to Assessment of multi entity datastream
   * Add facts data (json format) from a stream to Assessment of multi entity datastream
   * Add facts data (csv format) from a stream to Assessment of multi entity datastream
   * Get facts data
@@ -826,7 +826,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   string response = falkonry.addFacts('assessment-id',data, options);
 ```
 
-#### Add facts data (json format) with addition tag to Assessment of multi entity datastream
+#### Add facts data (json format) with additional keyword to Assessment of multi entity datastream
 ```
   using Falkonry;
   using Falkonry.Helper.Models;
@@ -838,7 +838,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   options.Add("timeZone", "GMT");
   options.Add("entityIdentifier", "entities");
   options.Add("valueIdentifier", "Health");
-  options.Add("additionalTag", "testTag");
+  options.Add("additionalKeyword", "testTag");
 
   string token = "Add your token here";   
   SortedDictionary<string, string> options = new SortedDictionary<string, string>();
@@ -868,7 +868,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 
 ```
 
-#### Add facts data (csv format) with tags Assessment of multi entity datastream
+#### Add facts data (csv format) with keywords to Assessment of multi entity datastream
 ```
   using Falkonry;
   using Falkonry.Helper.Models;
@@ -880,7 +880,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   options.Add("timeZone", "GMT");
   options.Add("entityIdentifier", "car");
   options.Add("valueIdentifier", "Health");
-  options.Add("tagIdentifier", "tag");
+  options.Add("keywordIdentifier", "tag");
 
   string token = "Add your token here";   
   SortedDictionary<string, string> options = new SortedDictionary<string, string>();

@@ -259,7 +259,7 @@ namespace Falkonry.Tests
           { "timeZone", time.Zone },
           { "entityIdentifier", datastream.Field.EntityIdentifier },
           { "valueIdentifier" , "Health" },
-          { "tagIdentifier", "Tag" }
+          { "keywordIdentifier", "Tag" }
         };
         var assessment = _falkonry.CreateAssessment(asmt);
 
@@ -278,7 +278,7 @@ namespace Falkonry.Tests
     }
 
     [Test()]
-    public void AddFactsWithAdditionalTag()
+    public void AddFactsWithAdditionalKeyword()
     {
       var rnd = new System.Random();
       var randomNumber = System.Convert.ToString(rnd.Next(1, 10000));
@@ -336,7 +336,7 @@ namespace Falkonry.Tests
           { "timeZone", time.Zone },
           { "entityIdentifier", datastream.Field.EntityIdentifier },
           { "valueIdentifier" , "Health" },
-          { "additionalTag", "testTag" }
+          { "additionalKeyword", "testTag" }
         };
         var assessment = _falkonry.CreateAssessment(asmt);
 
@@ -567,7 +567,7 @@ namespace Falkonry.Tests
           {"timeZone", time.Zone },
           {"entityIdentifier", "car"},
           {"valueIdentifier" , "Health"},
-          {"tagIdentifier", "Tags"}
+          {"keywordIdentifier", "Tags"}
         };
         var assessment = _falkonry.CreateAssessment(asmt);
         var folder = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
@@ -586,7 +586,7 @@ namespace Falkonry.Tests
     }
 
     [Test()]
-    public void AddFactsWithAdditionalTagFromStream()
+    public void AddFactsWithAdditionalKeywordFromStream()
     {
       var rnd = new System.Random();
       var randomNumber = System.Convert.ToString(rnd.Next(1, 10000));
@@ -645,7 +645,7 @@ namespace Falkonry.Tests
           {"timeZone", time.Zone },
           {"entityIdentifier", "car"},
           {"valueIdentifier" , "Health"},
-          {"additionalTag" , "testTag"}
+          {"additionalKeyword" , "testTag"}
         };
         var assessment = _falkonry.CreateAssessment(asmt);
         var folder = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);

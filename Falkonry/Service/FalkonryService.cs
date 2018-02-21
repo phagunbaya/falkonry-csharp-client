@@ -471,8 +471,8 @@ namespace Falkonry.Service
         string timeZone;
         string entityIdentifier;
         string valueIdentifier;
-        string tagIdentifier;
-        string additionalTag;
+        string keywordIdentifier;
+        string additionalKeyword;
         string batchIdentifier;
 
         var firstReqParam = true;
@@ -525,21 +525,21 @@ namespace Falkonry.Service
             url += "&";
           url += "valueIdentifier=" + Uri.EscapeDataString(valueIdentifier);
         }
-        if (options.TryGetValue("additionalTag", out additionalTag))
+        if (options.TryGetValue("additionalKeyword", out additionalKeyword))
         {
           if (firstReqParam)
             firstReqParam = false;
           else
             url += "&";
-          url += "additionalTag=" + Uri.EscapeDataString(additionalTag);
+          url += "additionalKeyword=" + Uri.EscapeDataString(additionalKeyword);
         }
-        if (options.TryGetValue("tagIdentifier", out tagIdentifier))
+        if (options.TryGetValue("keywordIdentifier", out keywordIdentifier))
         {
           if (firstReqParam)
             firstReqParam = false;
           else
             url += "&";
-          url += "tagIdentifier=" + Uri.EscapeDataString(tagIdentifier);
+          url += "keywordIdentifier=" + Uri.EscapeDataString(keywordIdentifier);
         }
         if (options.TryGetValue("batchIdentifier", out batchIdentifier))
         {
