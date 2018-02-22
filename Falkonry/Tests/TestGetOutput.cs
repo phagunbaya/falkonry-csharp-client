@@ -13,7 +13,7 @@ namespace Falkonry.Tests
     static string token = System.Environment.GetEnvironmentVariable("FALKONRY_TOKEN");
     readonly Falkonry _falkonry = new Falkonry(host, token);
     List<Datastream> _datastreams = new List<Datastream>();
-    static string assessmentId = "r2h27kn82dvrvy";
+    static string assessmentId = System.Environment.GetEnvironmentVariable("FALKONRY_ASSESSMENT_SLIDING_ID");
 
     EventSource eventSource;
 
