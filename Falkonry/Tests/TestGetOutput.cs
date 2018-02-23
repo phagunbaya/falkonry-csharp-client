@@ -74,8 +74,8 @@ namespace Falkonry.Tests
         // Fetch Historical output data for given assessment, startTime , endtime
         var options = new SortedDictionary<string, string>
         {
-          { "startTime", "2011-01-01T01:00:00.000Z" }, // in the format YYYY-MM-DDTHH:mm:ss.SSSZ
-          { "endTime", "2014-06-13T01:00:00.000Z" },  // in the format YYYY-MM-DDTHH:mm:ss.SSSZ
+          { "startTime", "2011-01-03T01:00:00.000Z" }, // in the format YYYY-MM-DDTHH:mm:ss.SSSZ
+          { "endTime", "2014-01-01T01:00:00.000Z" },  // in the format YYYY-MM-DDTHH:mm:ss.SSSZ
           { "responseFormat", "application/json" }  // also available options 1. text/csv 2. application/json
         };
         var httpResponse = _falkonry.GetHistoricalOutput(assessment, options);
@@ -129,8 +129,8 @@ namespace Falkonry.Tests
         // Fetch Historical output data for given assessment, startTime , endtime
         var options = new SortedDictionary<string, string>
         {
-          { "startTime", "2011-01-01T01:00:00.000Z" }, // in the format YYYY-MM-DDTHH:mm:ss.SSSZ
-          { "endTime", "2014-06-13T01:00:00.000Z" },  // in the format YYYY-MM-DDTHH:mm:ss.SSSZ
+          { "startTime", "2011-01-03T01:00:00.000Z" }, // in the format YYYY-MM-DDTHH:mm:ss.SSSZ
+          { "endTime", "2014-01-01T01:00:00.000Z" },  // in the format YYYY-MM-DDTHH:mm:ss.SSSZ
           { "responseFormat", "application/json" },  // also available options 1. text/csv 2. application/json
           { "modelIndex", "1" } 
         };
