@@ -14,7 +14,7 @@
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageLicenseUrl>https://github.com/Falkonry/falkonry-csharp-client/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/Falkonry/falkonry-csharp-client</PackageProjectUrl>
-    <Title>Falkonry Client</Title>
+    <Title>FalkonryClient</Title>
     <Description>C# ADK for integrating with Falkonry's condition prediction APIs</Description>
     <Authors>Falkonry Inc</Authors>
     <ReleaseVersion>2.0.0</ReleaseVersion>
