@@ -8,4 +8,4 @@
 [assembly: AssemblyCopyright("Copyright (c) 2013-2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-[assembly: AssemblyVersion("1.1.5")]
+[assembly: AssemblyVersion("2.0.0")]
