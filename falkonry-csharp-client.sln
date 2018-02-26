@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AEF3A38E-FB52-44BC-AB0E-CA25B9E6965E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Falkonry", "Falkonry\Falkonry.csproj", "{23865509-62E4-40DF-95B9-DDFD7EAC6AD7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FalkonryClient", "FalkonryClient\FalkonryClient.csproj", "{23865509-62E4-40DF-95B9-DDFD7EAC6AD7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,7 +30,7 @@ Global
 		$3.scope = text/x-csharp
 		$0.StandardHeader = $4
 		$0.VersionControlPolicy = $5
-		version = 1.1.2
+		version = 2.0.0
 		description = C# ADK for accessing Falkonry's condition prediction APIs
 	EndGlobalSection
 EndGlobal

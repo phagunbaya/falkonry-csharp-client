@@ -58,8 +58,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 #### Create Datastream for narrow/historian style data from a single entity
     
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
     
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -92,8 +92,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 #### Create Batch Datastream for narrow/historian style data from a single entity
     
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
     
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -124,8 +124,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 #### Create Datastream for narrow/historian style data from a multiple entities
     
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
   
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -158,8 +158,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 #### Create Datastream for wide style data from a single entity
     
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
   
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -230,8 +230,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 #### Create Datastream for wide style data from a multiple entities
     
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
   
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -246,8 +246,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   var ds = new DatastreamRequest();
   var Field = new Field();
   var Signal = new Signal();
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
   
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -305,8 +305,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 
 #### Create Datastream with microseconds precision
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
   
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -339,8 +339,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 
 #### Retrieve Datastreams
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -349,8 +349,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 
 #### Retrieve Datastream by id
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -360,8 +360,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 
 #### Delete Datastream by id
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -371,8 +371,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 
 #### Add EntityMeta to a Datastream
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -401,8 +401,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 
 #### Get Entity Meta of datastream  
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -412,8 +412,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 #### To create Assessment
     
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -427,8 +427,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 #### Retrieve Assessments
     
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -438,8 +438,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 #### Retrieve Assessment by Id
     
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -449,8 +449,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 #### Delete assessment by id
     
 ```
-    using Falkonry;
-    using Falkonry.Helper.Models;
+    using FalkonryClient;
+    using FalkonryClient.Helper.Models;
 
     string token="Add your token here";   
     Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -459,8 +459,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 
 ### Get Condition List Of Assessment
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   SortedDictionary<string, string> options = new SortedDictionary<string, string>();
   options.Add("startTimeIdentifier", "time");
@@ -483,8 +483,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 #### Add historical narrow input data (json format) to multi entity Datastream (Used for model revision) 
     
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -503,8 +503,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 
 #### Add historical narrow input data (csv format) single entity to Datastream (Used for model revision) 
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -521,8 +521,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 
 #### Add historical wide input data (json format) to single entity Datastream (Used for model revision)
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -536,8 +536,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 
 #### Add historical wide input data (csv format) to multi entity Datastream (Used for model revision)
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -557,8 +557,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 #### Add historical narrow input data (json format) to single entity Batch Datastream (Used for model revision) 
     
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -578,8 +578,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 
 #### Add historical narrow input data (csv format) multi entity to Batch Datastream (Used for model revision) 
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -603,8 +603,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 
 #### Add historical wide input data (json format) to multi entity Datastream (Used for model revision)
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -623,8 +623,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 
 #### Add historical wide input data (csv format) to single entity Batch Datastream (Used for model revision)
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -643,8 +643,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 #### Add historical input data (json format) from a stream to Datastream (Used for model revision) 
     
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -671,8 +671,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 #### Add historical input data (csv format) from a stream to Datastream (Used for model revision) 
     
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -698,8 +698,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 ```
 #### Add live input data (json format) to Datastream (Used for live monitoring)  
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -717,8 +717,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 
 #### Add live input data (csv format) to Datastream (Used for live monitoring)
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -738,8 +738,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 
 #### Add live input data (json format) from a stream to Datastream (Used for live monitoring) 
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -765,8 +765,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 
 #### Add live input data (csv format) from a stream to Datastream (Used for live monitoring) 
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -792,8 +792,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 
 #### Add facts data (json format) to Assessment of single entity datastream  
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   SortedDictionary<string, string> options = new SortedDictionary<string, string>();
   options.Add("startTimeIdentifier", "time");
@@ -812,8 +812,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 
 #### Add facts data (json format) to Assessment of single entity Batch datastream  
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   SortedDictionary<string, string> options = new SortedDictionary<string, string>();
 
@@ -828,8 +828,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 
 #### Add facts data (json format) with additional keyword to Assessment of multi entity datastream
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   SortedDictionary<string, string> options = new SortedDictionary<string, string>();
   options.Add("startTimeIdentifier", "time");
@@ -850,8 +850,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 
 #### Add facts data (csv format) to Assessment of single entity datastream
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   SortedDictionary<string, string> options = new SortedDictionary<string, string>();
   options.Add("startTimeIdentifier", "time");
@@ -870,8 +870,8 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
 
 #### Add facts data (csv format) with keywords to Assessment of multi entity datastream
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   SortedDictionary<string, string> options = new SortedDictionary<string, string>();
   options.Add("startTimeIdentifier", "time");
@@ -899,8 +899,8 @@ Sample JSONFile:
 ```
 
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   SortedDictionary<string, string> options = new SortedDictionary<string, string>();
   options.Add("startTimeIdentifier", "time");
@@ -929,8 +929,8 @@ Sample CSVFile
 ```
 
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   SortedDictionary<string, string> options = new SortedDictionary<string, string>();
   options.Add("startTimeIdentifier", "time");
@@ -949,8 +949,8 @@ Sample CSVFile
 
 #### Get facts data of Assessment
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -961,8 +961,8 @@ Sample CSVFile
 
 #### Get Datastream Input data
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -972,8 +972,8 @@ Sample CSVFile
 
 #### Get Historian Output from Assessment
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -1022,8 +1022,8 @@ Sample CSVFile
 
 #### Get Streaming Output
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -1053,8 +1053,8 @@ Sample CSVFile
 
 #### Datastream On (Start live monitoring of datastream)
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
@@ -1064,8 +1064,8 @@ Sample CSVFile
 
 #### Datastream Off (Stop live monitoring of datastream)
 ```
-  using Falkonry;
-  using Falkonry.Helper.Models;
+  using FalkonryClient;
+  using FalkonryClient.Helper.Models;
 
   string token="Add your token here";   
   Falkonry falkonry = new Falkonry("https://localhost:8080", token);
