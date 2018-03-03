@@ -77,8 +77,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   var Field = new Field();
   var Signal = new Signal();
   Signal.ValueIdentifier = "value";
-  Signal.TagIdentifier = "tag";
-  Signal.IsSignalPrefix = true;
+  Signal.SignalIdentifier = "signal";
   Field.Signal = Signal;
   Field.Time = time;
   ds.Field = Field;
@@ -143,9 +142,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   var Field = new Field();
   var Signal = new Signal();
   Signal.ValueIdentifier = "value";
-  Signal.TagIdentifier = "tag";
-  Signal.IsSignalPrefix = true;
-  Signal.Delimiter = "_";
+  Signal.SignalIdentifier = "signal";
   Field.Signal = Signal;
   Field.Time = time;
   ds.Field = Field;
@@ -324,8 +321,7 @@ Falkonry C# Client to access [Falkonry Condition Prediction](falkonry.com) APIs
   var Field = new Field();
   var Signal = new Signal();
   Signal.ValueIdentifier = "value";
-  Signal.TagIdentifier = "tag";
-  Signal.IsSignalPrefix = true;
+  Signal.SignalIdentifier = "signal";
   Field.Signal = Signal;
   Field.Time = time;
   ds.Field = Field;
