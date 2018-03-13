@@ -240,16 +240,16 @@ namespace FalkonryClient.Service
 
         }
         string format;
-        var responseFromat = "application/json";
-        if (options.TryGetValue("responseFromat", out format))
+        var responseFormat = "application/json";
+        if (options.TryGetValue("responseFormat", out format))
         {
           if (format.Equals("text/csv"))
           {
-            responseFromat = "text/csv";
+            responseFormat = "text/csv";
           }
         }
 
-        var factsData = _http.GetOutput(url, responseFromat);
+        var factsData = _http.GetOutput(url, responseFormat);
         return factsData;
       }
       catch (Exception)
@@ -267,16 +267,16 @@ namespace FalkonryClient.Service
         var url = "/datastream/" + datastream + "/data";
 
         string format;
-        var responseFromat = "application/json";
-        if (options.TryGetValue("responseFromat", out format))
+        var responseFormat = "application/json";
+        if (options.TryGetValue("responseFormat", out format))
         {
           if (format.Equals("text/csv"))
           {
-            responseFromat = "text/csv";
+            responseFormat = "text/csv";
           }
         }
 
-        var inputData = _http.GetOutput(url, responseFromat);
+        var inputData = _http.GetOutput(url, responseFormat);
         return inputData;
       }
       catch (Exception)
