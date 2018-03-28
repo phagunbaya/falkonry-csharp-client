@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>FalkonryClient</id>
+    <version>2.1.1</version>
+    <authors>Falkonry Inc</authors>
+    <owners>Falkonry Inc</owners>
+    <licenseUrl>https://github.com/Falkonry/falkonry-csharp-client/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Falkonry/falkonry-csharp-client</projectUrl>
+    <iconUrl>https://jumpstart.falkonry.ai/img/logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Falkonry C# ADK for condition prediction APIs</description>
+    <releaseNotes>https://github.com/Falkonry/falkonry-csharp-client/releases</releaseNotes>
+    <copyright>Copyright (c) 2018. Falkonry Inc.</copyright>
+    <tags>falkonry prediction falkonryclient</tags>
+    <dependencies>
+      <dependency id="Desharp" version="1.2.11" />
+      <dependency id="Microsoft.Bcl" version="1.1.10" />
+      <dependency id="Microsoft.Bcl.Async" version="1.0.168" />
+      <dependency id="Microsoft.Bcl.Build" version="1.0.21" />
+      <dependency id="Microsoft.Net.Http" version="2.2.29" />
+      <dependency id="Newtonsoft.Json" version="11.0.1" />
+      <dependency id="NUnit" version="3.9.0" />
+    </dependencies>
+  </metadata>
+</package>
