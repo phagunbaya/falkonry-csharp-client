@@ -9,6 +9,7 @@ namespace FalkonryClient.Tests
   [TestFixture()]
   public class TestGetOutput
   {
+
     static string host = System.Environment.GetEnvironmentVariable("FALKONRY_HOST_URL");
     static string token = System.Environment.GetEnvironmentVariable("FALKONRY_TOKEN");
     readonly Falkonry _falkonry = new Falkonry(host, token);
@@ -66,7 +67,6 @@ namespace FalkonryClient.Tests
     [Test()]
     public void TestHistoricalOutput()
     {
-      var javascript = new JavaScriptSerializer();
       try
       {
         var assessment = _falkonry.GetAssessment(assessmentId);
@@ -93,7 +93,7 @@ namespace FalkonryClient.Tests
           // Client should do timely pooling on the using same method, sending tracker id in the query params
           // Once data is available server will response with 200 status code and data in json/csv format.
 
-          var trackerResponse = javascript.Deserialize<Tracker>(httpResponse.Response);
+          var trackerResponse = JsonConvert.DeserializeObject<Tracker>(httpResponse.Response);
           // get id from the tracker
           var id = trackerResponse.Id;
           //string __id = "phzpfmvwsgiy7ojc";
@@ -121,7 +121,6 @@ namespace FalkonryClient.Tests
     [Test()]
     public void TestHistoricalModelOutput()
     {
-      var javascript = new JavaScriptSerializer();
       try
       {
         var assessment = _falkonry.GetAssessment(assessmentId);
@@ -149,7 +148,7 @@ namespace FalkonryClient.Tests
           // Client should do timely pooling on the using same method, sending tracker id in the query params
           // Once data is available server will response with 200 status code and data in json/csv format.
 
-          var trackerResponse = javascript.Deserialize<Tracker>(httpResponse.Response);
+          var trackerResponse = JsonConvert.DeserializeObject<Tracker>(httpResponse.Response);
           // get id from the tracker
           var id = trackerResponse.Id;
           //string __id = "phzpfmvwsgiy7ojc";
