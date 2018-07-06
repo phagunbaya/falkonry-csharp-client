@@ -7,7 +7,7 @@ using System.Web.Script.Serialization;
 namespace FalkonryClient.Tests
 {
   [TestFixture()]
-  public class TestLiveAssessment
+  public class TestAssessmentLive
   {
     static string host = System.Environment.GetEnvironmentVariable("FALKONRY_HOST_URL");
     static string token = System.Environment.GetEnvironmentVariable("FALKONRY_TOKEN");
@@ -84,22 +84,15 @@ namespace FalkonryClient.Tests
     }
 
 
-    // Should turn on the assessment
+    // Should turn on and off the assessment
     [Test()]
-    [Ignore("Execute only during local testing")]
-    public void testOnAssessment()
+    public void testOnOffAssessment()
     {
-      Assessment assessment = _falkonry.onAssessment(assessmentId);
-      Assert.AreEqual(assessment.Id, assessmentId);
-    }
-
-    // Should turn off the assessment
-    [Test()]
-    [Ignore("Execute only during local testing")]
-    public void testOffAssessment()
-    {
+      // Here assessment should have an active model
       Assessment assessment1 = _falkonry.onAssessment(assessmentId);
       Assert.AreEqual(assessment1.Id, assessmentId);
+
+      System.Threading.Thread.Sleep(10000);
 
       Assessment assessment2 = _falkonry.onAssessment(assessmentId);
       Assert.AreEqual(assessment2.Id, assessmentId);

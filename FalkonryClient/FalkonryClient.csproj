@@ -130,7 +130,7 @@
     <Compile Include="Tests\TestGetFacts.cs" />
     <Compile Include="Tests\TestGetDatastreamData.cs" />
     <Compile Include="Tests\TestGetOutput.cs" />
-    <Compile Include="Tests\TestLiveAssessment.cs" />
+    <Compile Include="Tests\TestAssessmentLive.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tests\" />
