@@ -244,6 +244,30 @@ namespace FalkonryClient
       }
     }
 
+    public Assessment onAssessment(string assessmentId)
+    {
+      try
+      {
+        return _falkonryService.onAssessment(assessmentId);
+      }
+      catch (Exception)
+      {
+        throw;
+      }
+    }
+
+    public Assessment offAssessment(string assessmentId)
+    {
+      try
+      {
+        return _falkonryService.offAssessment(assessmentId);
+      }
+      catch (Exception)
+      {
+        throw;
+      }
+    }
+
     public HttpResponse getFacts(string assessment, SortedDictionary<string, string> options)
     {
       try
