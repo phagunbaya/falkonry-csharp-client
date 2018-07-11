@@ -246,26 +246,12 @@ namespace FalkonryClient
 
     public Assessment onAssessment(string assessmentId)
     {
-      try
-      {
-        return _falkonryService.onAssessment(assessmentId);
-      }
-      catch (Exception)
-      {
-        throw;
-      }
+      return _falkonryService.onAssessment(assessmentId);
     }
 
     public Assessment offAssessment(string assessmentId)
     {
-      try
-      {
-        return _falkonryService.offAssessment(assessmentId);
-      }
-      catch (Exception)
-      {
-        throw;
-      }
+      return _falkonryService.offAssessment(assessmentId);
     }
 
     public HttpResponse getFacts(string assessment, SortedDictionary<string, string> options)

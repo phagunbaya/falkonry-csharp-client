@@ -463,35 +463,19 @@ namespace FalkonryClient.Service
     // On  Assessment
     public Assessment onAssessment(string assessmentId)
     {
-      try
-      {
-        Assessment assessment = GetAssessment(assessmentId);
-        var assessmentListResp = _http.Post("/datastream/" + assessment.Datastream + "/on?assessment="+assessmentId, "");
-        List<Assessment> assessmentList = JsonConvert.DeserializeObject<List<Assessment>>(assessmentListResp);
-        return assessmentList[0];
-      }
-      catch (Exception)
-      {
-
-        throw;
-      }
+      Assessment assessment = GetAssessment(assessmentId);
+      var assessmentListResp = _http.Post("/datastream/" + assessment.Datastream + "/on?assessment="+assessmentId, "");
+      List<Assessment> assessmentList = JsonConvert.DeserializeObject<List<Assessment>>(assessmentListResp);
+      return assessmentList[0];
     }
 
     // Off  Assessment
     public Assessment offAssessment(string assessmentId)
     {
-      try
-      {
-        Assessment assessment = GetAssessment(assessmentId);
-        var assessmentListResp = _http.Post("/datastream/" + assessment.Datastream + "/off?assessment="+assessmentId, "");
-        List<Assessment> assessmentList = JsonConvert.DeserializeObject<List<Assessment>>(assessmentListResp);
-        return assessmentList[0];
-      }
-      catch (Exception)
-      {
-
-        throw;
-      }
+      Assessment assessment = GetAssessment(assessmentId);
+      var assessmentListResp = _http.Post("/datastream/" + assessment.Datastream + "/off?assessment="+assessmentId, "");
+      List<Assessment> assessmentList = JsonConvert.DeserializeObject<List<Assessment>>(assessmentListResp);
+      return assessmentList[0];
     }
 
     private string get_add_facts_url(string assessment, SortedDictionary<string, string> options)
