@@ -61,281 +61,211 @@ namespace FalkonryClient.Service
         }
         response = (HttpWebResponse)e.Response;
       }
-      try
+      var stream = response.GetResponseStream();
+      if (stream != null)
       {
-        var stream = response.GetResponseStream();
-        if (stream != null)
-        {
-          var resp = new StreamReader(stream).ReadToEnd();
+        var resp = new StreamReader(stream).ReadToEnd();
 
-          if (Convert.ToInt32(response.StatusCode) == 401)
-          {
-            throw new FalkonryException("Unauthorized : Invalid token " + Convert.ToString(response.StatusCode));
-          }
-          else if (Convert.ToInt32(response.StatusCode) < 400 || Convert.ToInt32(response.StatusCode) == 409)
-          {
-            return resp;
-          }
-          else
-          {
-            try
-            {
-              ErrorMessage errMsgJson = new ErrorMessage();
-              errMsgJson = JsonConvert.DeserializeObject<ErrorMessage>(resp);
-              if (errMsgJson.Message.Length > 0)
-              {
-                throw new FalkonryException(Convert.ToString(errMsgJson.Message));
-              }
-              else
-              {
-                throw new FalkonryException("Internal Server Error.");
-              }
-            }
-            catch (Exception)
-            {
-              throw;
-            }
-          }
+        if (Convert.ToInt32(response.StatusCode) == 401)
+        {
+          throw new FalkonryException("Unauthorized : Invalid token " + Convert.ToString(response.StatusCode));
+        }
+        else if (Convert.ToInt32(response.StatusCode) < 400 || Convert.ToInt32(response.StatusCode) == 409)
+        {
+          return resp;
         }
         else
         {
-          throw new FalkonryException("Internal Server Error.");
+          ErrorMessage errMsgJson = new ErrorMessage();
+          errMsgJson = JsonConvert.DeserializeObject<ErrorMessage>(resp);
+          if (errMsgJson.Message.Length > 0)
+          {
+            throw new FalkonryException(Convert.ToString(errMsgJson.Message));
+          }
+          else
+          {
+            throw new FalkonryException("Internal Server Error.");
+          }
         }
       }
-      catch (Exception)
+      else
       {
-        throw;
+        throw new FalkonryException("Internal Server Error.");
       }
     }
 
     public string Get(string path)
     {
-      try
-      {
-        var url = _host + path;
-        var request = (HttpWebRequest)WebRequest.Create(url);
-        request.ServicePoint.Expect100Continue = false;
-        request.Credentials = CredentialCache.DefaultCredentials;
-        request.Headers.Add("Authorization", "Bearer " + _token);
-        request.Headers.Add("x-falkonry-source", _defaultHeder);
-        request.Method = "GET";
-        request.ContentType = "application/json";
+      var url = _host + path;
+      var request = (HttpWebRequest)WebRequest.Create(url);
+      request.ServicePoint.Expect100Continue = false;
+      request.Credentials = CredentialCache.DefaultCredentials;
+      request.Headers.Add("Authorization", "Bearer " + _token);
+      request.Headers.Add("x-falkonry-source", _defaultHeder);
+      request.Method = "GET";
+      request.ContentType = "application/json";
 
-        return HandleGetReponse(request);
-      }
-      catch (Exception)
-      {
-        throw;
-      }
+      return HandleGetReponse(request);
     }
 
     public string Post(string path, string data)
     {
-      try
+      var url = _host + path;
+      var request = (HttpWebRequest)WebRequest.Create(url);
+      request.ServicePoint.Expect100Continue = false;
+      request.Credentials = CredentialCache.DefaultCredentials;
+      request.Headers.Add("Authorization", "Bearer " + _token);
+      request.Headers.Add("x-falkonry-source", _defaultHeder);
+      request.Method = "POST";
+      request.ContentType = "application/json";
+      using (var streamWriter = new StreamWriter(request.GetRequestStream()))
       {
-        var url = _host + path;
-        var request = (HttpWebRequest)WebRequest.Create(url);
-        request.ServicePoint.Expect100Continue = false;
-        request.Credentials = CredentialCache.DefaultCredentials;
-        request.Headers.Add("Authorization", "Bearer " + _token);
-        request.Headers.Add("x-falkonry-source", _defaultHeder);
-        request.Method = "POST";
-        request.ContentType = "application/json";
-        using (var streamWriter = new StreamWriter(request.GetRequestStream()))
-        {
-          streamWriter.Write(data);
+        streamWriter.Write(data);
 
-          streamWriter.Flush();
+        streamWriter.Flush();
 
-          streamWriter.Close();
-        }
-
-        return HandleGetReponse(request);
+        streamWriter.Close();
       }
-      catch (Exception)
-      {
-        throw;
-      }
+
+      return HandleGetReponse(request);
     }
 
     public string Put(string path, string data)
     {
-      try
-      {
-        var url = _host + path;
-        var request = (HttpWebRequest)WebRequest.Create(url);
-        request.ServicePoint.Expect100Continue = false;
-        request.Credentials = CredentialCache.DefaultCredentials;
-        request.Headers.Add("Authorization", "Bearer " + _token);
-        request.Headers.Add("x-falkonry-source", _defaultHeder);
-        request.Method = "PUT";
-        request.ContentType = "application/json";
+      var url = _host + path;
+      var request = (HttpWebRequest)WebRequest.Create(url);
+      request.ServicePoint.Expect100Continue = false;
+      request.Credentials = CredentialCache.DefaultCredentials;
+      request.Headers.Add("Authorization", "Bearer " + _token);
+      request.Headers.Add("x-falkonry-source", _defaultHeder);
+      request.Method = "PUT";
+      request.ContentType = "application/json";
 
-        using (var streamWriter = new StreamWriter(request.GetRequestStream()))
-        {
-          streamWriter.Write(data);
-          streamWriter.Flush();
-          streamWriter.Close();
-        }
-        return HandleGetReponse(request);
-      }
-      catch (Exception)
+      using (var streamWriter = new StreamWriter(request.GetRequestStream()))
       {
-        throw;
+        streamWriter.Write(data);
+        streamWriter.Flush();
+        streamWriter.Close();
       }
+      return HandleGetReponse(request);
     }
 
     public async Task<string> Fpost(string path, SortedDictionary<string, string> options, byte[] stream)
     {
 
-      try
+      var rnd = new Random();
+      var randomNumber = Convert.ToString(rnd.Next(1, 200));
+      var url = _host + path;
+
+      string sd;
+      ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls;
+      var client = new HttpClient();
+
+      client.DefaultRequestHeaders.Add("Authorization", "Bearer " + _token);
+      client.DefaultRequestHeaders.Add("x-falkonry-source", _defaultHeder);
+      client.DefaultRequestHeaders.ExpectContinue = false;
+      using (var form = new MultipartFormDataContent())
       {
-        var rnd = new Random();
-        var randomNumber = Convert.ToString(rnd.Next(1, 200));
-        var url = _host + path;
+        form.Add(new StringContent(options["name"]), "name");
 
-        string sd;
-        ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls;
-        var client = new HttpClient();
+        form.Add(new StringContent(options["timeIdentifier"]), "timeIdentifier");
 
-        client.DefaultRequestHeaders.Add("Authorization", "Bearer " + _token);
-        client.DefaultRequestHeaders.Add("x-falkonry-source", _defaultHeder);
-        client.DefaultRequestHeaders.ExpectContinue = false;
-        using (var form = new MultipartFormDataContent())
+        form.Add(new StringContent(options["timeFormat"]), "timeFormat");
+
+        if (stream != null)
         {
-          form.Add(new StringContent(options["name"]), "name");
+          var tempFileName = "input" + randomNumber + "." + options["fileFormat"];
 
-          form.Add(new StringContent(options["timeIdentifier"]), "timeIdentifier");
-
-          form.Add(new StringContent(options["timeFormat"]), "timeFormat");
-
-          if (stream != null)
-          {
-            var tempFileName = "input" + randomNumber + "." + options["fileFormat"];
-
-            var bytearraycontent = new ByteArrayContent(stream);
-            bytearraycontent.Headers.Add("Content-Type", "text/" + options["fileFormat"]);
-            form.Add(bytearraycontent, "data", tempFileName);
-          }
-
-          var result = client.PostAsync(url, form).Result;
-
-          sd = await result.Content.ReadAsStringAsync();
+          var bytearraycontent = new ByteArrayContent(stream);
+          bytearraycontent.Headers.Add("Content-Type", "text/" + options["fileFormat"]);
+          form.Add(bytearraycontent, "data", tempFileName);
         }
 
-        return sd;
+        var result = client.PostAsync(url, form).Result;
+
+        sd = await result.Content.ReadAsStringAsync();
       }
-      catch (Exception)
-      {
-        throw;
-      }
+
+      return sd;
     }
 
     public string Delete(string path)
     {
-      try
-      {
-        var url = _host + path;
-        var request = (HttpWebRequest)WebRequest.Create(url);
-        request.ServicePoint.Expect100Continue = false;
-        request.Credentials = CredentialCache.DefaultCredentials;
-        request.Headers.Add("Authorization", "Bearer " + _token);
-        request.Headers.Add("x-falkonry-source", _defaultHeder);
-        request.Method = "DELETE";
-        request.ContentType = "application/json";
-        return HandleGetReponse(request);
-      }
-      catch (Exception)
-      {
-        throw;
-      }
+      var url = _host + path;
+      var request = (HttpWebRequest)WebRequest.Create(url);
+      request.ServicePoint.Expect100Continue = false;
+      request.Credentials = CredentialCache.DefaultCredentials;
+      request.Headers.Add("Authorization", "Bearer " + _token);
+      request.Headers.Add("x-falkonry-source", _defaultHeder);
+      request.Method = "DELETE";
+      request.ContentType = "application/json";
+      return HandleGetReponse(request);
     }
 
     public string Upstream(string path, byte[] data)
     {
-      try
-      {
-        var url = _host + path;
-        var request = (HttpWebRequest)WebRequest.Create(url);
-        request.ServicePoint.Expect100Continue = false;
+      var url = _host + path;
+      var request = (HttpWebRequest)WebRequest.Create(url);
+      request.ServicePoint.Expect100Continue = false;
 
-        request.Credentials = CredentialCache.DefaultCredentials;
-        request.Method = "POST";
-        request.Headers.Add("Authorization", "Bearer " + _token);
-        request.Headers.Add("x-falkonry-source", _defaultHeder);
-        request.ContentType = "text/plain";
-        // Set the ContentLength property of the WebRequest.
-        request.ContentLength = data.Length;
-        // Get the request stream.
+      request.Credentials = CredentialCache.DefaultCredentials;
+      request.Method = "POST";
+      request.Headers.Add("Authorization", "Bearer " + _token);
+      request.Headers.Add("x-falkonry-source", _defaultHeder);
+      request.ContentType = "text/plain";
+      // Set the ContentLength property of the WebRequest.
+      request.ContentLength = data.Length;
+      // Get the request stream.
 
-        var dataStream = request.GetRequestStream();
-        // Write the data to the request stream.
+      var dataStream = request.GetRequestStream();
+      // Write the data to the request stream.
 
-        dataStream.Write(data, 0, data.Length);
-        // Close the Stream object.
+      dataStream.Write(data, 0, data.Length);
+      // Close the Stream object.
 
-        dataStream.Close();
-        // Get the response.
+      dataStream.Close();
+      // Get the response.
 
-        return HandleGetReponse(request);
+      return HandleGetReponse(request);
 
-      }
-      catch (Exception)
-      {
-        throw;
-      }
     }
 
     public EventSource Downstream(string path)
     {
-      try
+      var url = _host + path;
+      var eventSource = new EventSource(url)
       {
-        var url = _host + path;
-        var eventSource = new EventSource(url)
-        {
-          Headers = new NameValueCollection { { "Authorization", "Bearer " + _token } }
-        };
+        Headers = new NameValueCollection { { "Authorization", "Bearer " + _token } }
+      };
 
-        eventSource.Connect();
+      eventSource.Connect();
 
-        return eventSource;
-      }
-      catch (Exception)
-      {
-        throw;
-      }
+      return eventSource;
     }
 
     public string PostData(string path, string data)
     {
-      try
+      var url = _host + path;
+
+      var request = (HttpWebRequest)WebRequest.Create(url);
+      request.ServicePoint.Expect100Continue = false;
+      request.Credentials = CredentialCache.DefaultCredentials;
+      request.Headers.Add("Authorization", "Bearer " + _token);
+      request.Headers.Add("x-falkonry-source", _defaultHeder);
+      request.Method = "POST";
+      request.ContentType = "text/plain";
+
+      using (var streamWriter = new StreamWriter(request.GetRequestStream()))
       {
-        var url = _host + path;
+        //initiate the request
+        streamWriter.Write(data);
 
-        var request = (HttpWebRequest)WebRequest.Create(url);
-        request.ServicePoint.Expect100Continue = false;
-        request.Credentials = CredentialCache.DefaultCredentials;
-        request.Headers.Add("Authorization", "Bearer " + _token);
-        request.Headers.Add("x-falkonry-source", _defaultHeder);
-        request.Method = "POST";
-        request.ContentType = "text/plain";
+        streamWriter.Flush();
 
-        using (var streamWriter = new StreamWriter(request.GetRequestStream()))
-        {
-          //initiate the request
-          streamWriter.Write(data);
-
-          streamWriter.Flush();
-
-          streamWriter.Close();
-        }
-
-        return HandleGetReponse(request);
+        streamWriter.Close();
       }
-      catch (Exception)
-      {
-        throw;
-      }
+
+      return HandleGetReponse(request);
     }
 
     public HttpResponse GetOutput(string path, string responseFormat)

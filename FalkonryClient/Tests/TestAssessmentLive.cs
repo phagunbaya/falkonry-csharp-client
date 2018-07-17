@@ -94,7 +94,7 @@ namespace FalkonryClient.Tests
 
       System.Threading.Thread.Sleep(30000);
 
-      Assessment assessment2 = _falkonry.onAssessment(assessmentId);
+      Assessment assessment2 = _falkonry.offAssessment(assessmentId);
       Assert.AreEqual(assessment2.Id, assessmentId);
     }
 
