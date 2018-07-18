@@ -15,271 +15,117 @@ namespace FalkonryClient
 
     public Datastream CreateDatastream(DatastreamRequest datastream)
     {
-      try
-      {
-        return _falkonryService.CreateDatastream(datastream);
-      }
-      catch (Exception)
-      {
-        throw;
-      }
-
+      return _falkonryService.CreateDatastream(datastream);
     }
 
     public List<Datastream> GetDatastreams()
     {
-      try
-      {
-        return _falkonryService.GetDatastream();
-      }
-      catch (Exception)
-      {
-
-        throw;
-      }
+      return _falkonryService.GetDatastream();
     }
 
     public Datastream GetDatastream(string datastream)
     {
-      try
-      {
-        return _falkonryService.GetDatastream(datastream);
-      }
-      catch (Exception)
-      {
-
-        throw;
-      }
+      return _falkonryService.GetDatastream(datastream);
     }
 
     public void DeleteDatastream(string datastream)
     {
-      try
-      {
-        _falkonryService.DeleteDatastream(datastream);
-      }
-      catch (Exception)
-      {
-
-        throw;
-      }
+      _falkonryService.DeleteDatastream(datastream);
     }
 
     public Assessment CreateAssessment(AssessmentRequest assessment)
     {
-      try
-      {
-        return _falkonryService.CreateAssessment(assessment);
-      }
-      catch (Exception)
-      {
-
-        throw;
-      }
+      return _falkonryService.CreateAssessment(assessment);
     }
 
     public List<Assessment> GetAssessments()
     {
-      try
-      {
-        return _falkonryService.GetAssessment();
-      }
-      catch (Exception)
-      {
-
-        throw;
-      }
+      return _falkonryService.GetAssessment();
     }
 
     public Assessment GetAssessment(string assessment)
     {
-      try
-      {
-        return _falkonryService.GetAssessment(assessment);
-      }
-      catch (Exception)
-      {
-
-        throw;
-      }
+      return _falkonryService.GetAssessment(assessment);
     }
 
     public void DeleteAssessment(string assessment)
     {
-      try
-      {
-        _falkonryService.DeleteAssessment(assessment);
-      }
-      catch (Exception)
-      {
-
-        throw;
-      }
+      _falkonryService.DeleteAssessment(assessment);
     }
 
     public InputStatus AddInput(string datastream, string data, SortedDictionary<string, string> options)
     {
-      try
-      {
-        return _falkonryService.AddInputData(datastream, data, options);
-      }
-      catch (Exception)
-      {
-
-        throw;
-      }
+      return _falkonryService.AddInputData(datastream, data, options);
     }
 
     public InputStatus AddInputStream(string datastream, byte[] stream, SortedDictionary<string, string> options)
     {
-      try
-      {
-        return _falkonryService.AddInputFromStream(datastream, stream, options);
-      }
-      catch (Exception)
-      {
-
-        throw;
-      }
+      return _falkonryService.AddInputFromStream(datastream, stream, options);
     }
 
     public EventSource GetOutput(string assessment, long? start, long? end)
     {
-      try
-      {
-        return _falkonryService.GetOutput(assessment, start, end);
-      }
-      catch (Exception)
-      {
-
-        throw;
-      }
+      return _falkonryService.GetOutput(assessment, start, end);
     }
 
     public InputStatus AddFacts(string assessment, string data, SortedDictionary<string, string> options)
     {
-      try
-      {
-        return _falkonryService.AddFacts(assessment, data, options);
-      }
-      catch (Exception)
-      {
-
-        throw;
-      }
+      return _falkonryService.AddFacts(assessment, data, options);
     }
+
     public InputStatus AddFactsStream(string assessment, byte[] stream, SortedDictionary<string, string> options)
     {
-      try
-      {
-        return _falkonryService.AddFactsStream(assessment, stream, options);
-      }
-      catch (Exception)
-      {
-
-        throw;
-      }
+      return _falkonryService.AddFactsStream(assessment, stream, options);
     }
 
     public HttpResponse GetHistoricalOutput(Assessment assessment, SortedDictionary<string, string> options)
     {
-      try
-      {
-        return _falkonryService.GetHistoricalOutput(assessment, options);
-      }
-      catch (Exception)
-      {
-
-        throw;
-      }
+      return _falkonryService.GetHistoricalOutput(assessment, options);
     }
 
     public List<EntityMeta> PostEntityMeta(List<EntityMetaRequest> entityMetaRequest, Datastream datastream)
     {
-      try
-      {
-        return _falkonryService.PostEntityMeta(entityMetaRequest, datastream);
-      }
-      catch (Exception)
-      {
-
-        throw;
-      }
+      return _falkonryService.PostEntityMeta(entityMetaRequest, datastream);
     }
 
     public List<EntityMeta> GetEntityMeta(Datastream datastream)
     {
-      try
-      {
-        return _falkonryService.GetEntityMeta(datastream);
-      }
-      catch (Exception)
-      {
-
-        throw;
-      }
+      return _falkonryService.GetEntityMeta(datastream);
     }
 
     public void onDatastream(string datastreamId)
     {
-      try
-      {
-        _falkonryService.onDatastream(datastreamId);
-      }
-      catch (Exception)
-      {
-        throw;
-      }
+      _falkonryService.onDatastream(datastreamId);
     }
 
     public void offDatastream(string datastreamId)
     {
-      try
-      {
-        _falkonryService.offDatastream(datastreamId);
-      }
-      catch (Exception)
-      {
-        throw;
-      }
+      _falkonryService.offDatastream(datastreamId);
+    }
+
+    public Assessment onAssessment(string assessmentId)
+    {
+      return _falkonryService.onAssessment(assessmentId);
+    }
+
+    public Assessment offAssessment(string assessmentId)
+    {
+      return _falkonryService.offAssessment(assessmentId);
     }
 
     public HttpResponse getFacts(string assessment, SortedDictionary<string, string> options)
     {
-      try
-      {
-        return _falkonryService.GetFacts(assessment, options);
-      }
-      catch (Exception)
-      {
-
-        throw;
-      }
+      return _falkonryService.GetFacts(assessment, options);
     }
 
     public HttpResponse GetDatastreamData(string datastream, SortedDictionary<string, string> options)
     {
-      try
-      {
-        return _falkonryService.GetDatastreamData(datastream, options);
-      }
-      catch (Exception)
-      {
-
-        throw;
-      }
+      return _falkonryService.GetDatastreamData(datastream, options);
     }
 
     public Tracker GetStatus(String trackerId)
     {
-      try
-      {
-        return _falkonryService.GetStatus(trackerId);
-      }
-      catch (Exception)
-      {
-        throw;
-      }
+      return _falkonryService.GetStatus(trackerId);
     }
 
   }
