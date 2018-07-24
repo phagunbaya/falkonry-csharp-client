@@ -16,7 +16,7 @@ namespace FalkonryClient.Tests
     readonly Falkonry _falkonry = new Falkonry(host, token);
     List<Datastream> _datastreams = new List<Datastream>();
 
-    // Get live monitoring status for assessment
+    // Should get live monitoring status of assessment
     [Test()]
     public void testLiveMonitoringStatus()
     {
@@ -25,7 +25,7 @@ namespace FalkonryClient.Tests
     }
 
 
-    // Should get exception when turning on the assessment
+    // Should get exception when turning on the assessment without active model
     [Test()]
     public void testOnAssessmentException()
     {
