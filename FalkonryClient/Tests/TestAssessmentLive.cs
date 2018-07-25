@@ -96,6 +96,8 @@ namespace FalkonryClient.Tests
 
       Assessment assessment2 = _falkonry.offAssessment(assessmentId);
       Assert.AreEqual(assessment2.Id, assessmentId);
+
+      System.Threading.Thread.Sleep(30000);
     }
 
     [TearDown()]
