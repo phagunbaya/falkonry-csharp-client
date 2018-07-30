@@ -102,7 +102,7 @@ namespace FalkonryClient
     /// <returns>Status of data ingestion</returns>
     /// <param name="datastream">Datastream id</param>
     /// <param name="data">Input data as string in csv/json format</param>
-    /// <param name="options">SortedDictionary of parameters like hasMoreData, steaming and various field identifiers in data</param>
+    /// <param name="options">SortedDictionary of parameters like hasMoreData, streaming, timeIdentifier, timeFormat, timeZone, entityIdentifier, valueIdentifier, signalIdentifier, batchIdentifier</param>
     public InputStatus AddInput(string datastream, string data, SortedDictionary<string, string> options)
     {
       return _falkonryService.AddInputData(datastream, data, options);
@@ -114,7 +114,7 @@ namespace FalkonryClient
     /// <returns>Status of data ingestion</returns>
     /// <param name="datastream">Datastream id</param>
     /// <param name="stream">Input data as byte[] in csv/json format</param>
-    /// <param name="options">SortedDictionary of parameters like hasMoreData, steaming and various field identifiers in data</param>
+    /// <param name="options">SortedDictionary of parameters like hasMoreData, streaming, timeIdentifier, timeFormat, timeZone, entityIdentifier, valueIdentifier, signalIdentifier, batchIdentifier</param>
     public InputStatus AddInputStream(string datastream, byte[] stream, SortedDictionary<string, string> options)
     {
       return _falkonryService.AddInputFromStream(datastream, stream, options);
@@ -138,7 +138,7 @@ namespace FalkonryClient
     /// <returns>Status of data ingestion</returns>
     /// <param name="assessment">Assessment id</param>
     /// <param name="data">Fact data as string in csv/json format</param>
-    /// <param name="options">SortedDictionary of parameters for various field identifiers in data</param>
+    /// <param name="options">SortedDictionary of parameters like startTimeIdentifier, endTimeIdentifier, timeFormat, timeZone, entityIdentifier, valueIdentifier, batchIdentifier, keywordIdentifier, additionalKeyword</param>
     public InputStatus AddFacts(string assessment, string data, SortedDictionary<string, string> options)
     {
       return _falkonryService.AddFacts(assessment, data, options);
@@ -150,7 +150,7 @@ namespace FalkonryClient
     /// <returns>Status of data ingestion</returns>
     /// <param name="assessment">Assessment id</param>
     /// <param name="stream">Fact data as byte[] in csv/json format</param>
-    /// <param name="options">SortedDictionary of parameters for various field identifiers in data</param>
+    /// <param name="options">SortedDictionary of parameters like startTimeIdentifier, endTimeIdentifier, timeFormat, timeZone, entityIdentifier, valueIdentifier, batchIdentifier, keywordIdentifier, additionalKeyword</param>
     public InputStatus AddFactsStream(string assessment, byte[] stream, SortedDictionary<string, string> options)
     {
       return _falkonryService.AddFactsStream(assessment, stream, options);
